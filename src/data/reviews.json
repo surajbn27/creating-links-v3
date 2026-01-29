@@ -1,0 +1,23 @@
+[
+  {
+    "parent_name": "Priya S.",
+    "child_age": "5 years old",
+    "review": "The progress my son has made in just 6 months is incredible. He is now speaking in full sentences!",
+    "service": "Speech Therapy",
+    "rating": 5
+  },
+  {
+    "parent_name": "Rahul K.",
+    "child_age": "7 years old",
+    "review": "The occupational therapists are so patient. They turned 'therapy' into 'playtime' for my daughter.",
+    "service": "Occupational Therapy",
+    "rating": 5
+  },
+  {
+    "parent_name": "Anita M.",
+    "child_age": "4 years old",
+    "review": "We were very worried about school readiness. The team created a specific plan that worked wonders.",
+    "service": "School Readiness",
+    "rating": 5
+  }
+]

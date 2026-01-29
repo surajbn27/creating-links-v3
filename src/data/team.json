@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Founder Name 1",
+    "role": "Co-Founder & Senior Speech Therapist",
+    "qualifications": "MASLP, Certified AVT",
+    "bio": "With over 15 years of experience, I specialize in early intervention and parent coaching.",
+    "image": "https://placehold.co/400x400/267c88/white?text=Founder+1",
+    "is_founder": true
+  },
+  {
+    "name": "Founder Name 2",
+    "role": "Co-Founder & Senior Occupational Therapist",
+    "qualifications": "BOT, SI Certified",
+    "bio": "Dedicated to helping children achieve independence through sensory integration and play.",
+    "image": "https://placehold.co/400x400/267c88/white?text=Founder+2",
+    "is_founder": true
+  },
+  {
+    "name": "New Hire Name",
+    "role": "Junior Special Educator",
+    "qualifications": "B.Ed (Special Education)",
+    "bio": "Passionate about creating individualized learning plans for school readiness.",
+    "image": "https://placehold.co/400x400/f4a261/white?text=Therapist",
+    "is_founder": false
+  }
+]

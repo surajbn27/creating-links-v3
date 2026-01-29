@@ -1,11 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
-import ServicesSection from '../components/ServicesSection.astro'; // <--- Import it
+import ServicesSection from '../components/ServicesSection.astro';
+import Reviews from '../components/Reviews.astro'; // <--- 1. Import
 ---
 
 <Layout>
 	<main>
 		<Hero />
-		<ServicesSection /> </main>
+		<ServicesSection />
+        <Reviews /> </main>
 </Layout>

@@ -1,0 +1,240 @@
+---
+/* =========================================
+   FILE: src/pages/team.astro
+   VERSION: 1.0
+   DESCRIPTION: Data-driven Team Page
+   ========================================= */
+
+import Layout from '../layouts/Layout.astro';
+
+// 1. IMPORT THE DATA (Like importing a Python module)
+import teamData from '../data/team.json';
+
+// 2. FILTER DATA (Separate Founders from Staff)
+const founders = teamData.filter(member => member.is_founder);
+const team = teamData.filter(member => !member.is_founder);
+---
+
+<Layout>
+  <section class="page-header">
+    <div class="container">
+      <h1>Meet Our Specialists</h1>
+      <p>A multidisciplinary team dedicated to your child's growth.</p>
+    </div>
+  </section>
+
+  <section class="team-section">
+    <div class="container">
+      <h2 class="section-title">Leadership Team</h2>
+      <div class="grid founders-grid">
+
+        {founders.map((member) => (
+          <div class="profile-card founder-card">
+            <div class="img-wrapper">
+              <img src={member.image} alt={member.name} />
+            </div>
+            <div class="info">
+              <h3>{member.name}</h3>
+              <span class="role">{member.role}</span>
+              <span class="qualifications">{member.qualifications}</span>
+              <p>{member.bio}</p>
+            </div>
+          </div>
+        ))}
+
+      </div>
+    </div>
+  </section>
+
+  {team.length > 0 && (
+    <section class="team-section bg-light">
+      <div class="container">
+        <h2 class="section-title">Our Clinical Team</h2>
+        <div class="grid team-grid">
+
+          {team.map((member) => (
+            <div class="profile-card">
+              <div class="img-wrapper-small">
+                <img src={member.image} alt={member.name} />
+              </div>
+              <div class="info">
+                <h3>{member.name}</h3>
+                <span class="role">{member.role}</span>
+                <p>{member.bio}</p>
+              </div>
+            </div>
+          ))}
+
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="hiring-cta">
+    <div class="container">
+      <h2>Join Our Team</h2>
+      <p>Are you a passionate therapist? We are always looking for dedicated professionals.</p>
+      <a href="/contact" class="btn-outline">Apply Now</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* =========================================
+     STYLES: Version 1.0
+     ========================================= */
+
+  .page-header {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 3rem 20px;
+    text-align: center;
+  }
+
+  .team-section {
+    padding: 4rem 20px;
+  }
+
+  .bg-light {
+    background-color: var(--color-bg-light);
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    text-align: center;
+    color: var(--color-primary);
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .grid {
+    display: grid;
+    gap: 2rem;
+  }
+
+  /* Founders Grid: 2 columns */
+  .founders-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+
+  /* Team Grid: 3 columns (smaller cards) */
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  /* CARD STYLES */
+  .profile-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    transition: transform 0.2s;
+  }
+
+  .profile-card:hover {
+    transform: translateY(-5px);
+  }
+
+  /* Founder Card Specifics */
+  .founder-card {
+    display: flex; /* Side-by-side layout for founders */
+    align-items: center;
+  }
+
+  .founder-card .img-wrapper {
+    flex: 1;
+    height: 100%;
+  }
+
+  .founder-card .img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .founder-card .info {
+    flex: 1.5;
+    padding: 2rem;
+  }
+
+  /* Standard Team Card */
+  .img-wrapper-small img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  .info {
+    padding: 1.5rem;
+  }
+
+  h3 {
+    color: var(--color-text-main);
+    margin-bottom: 0.2rem;
+    font-size: 1.3rem;
+  }
+
+  .role {
+    display: block;
+    color: var(--color-secondary); /* Orange */
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+  }
+
+  .qualifications {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+
+  p {
+    color: #4b5563;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  /* Hiring Section */
+  .hiring-cta {
+    text-align: center;
+    padding: 4rem 20px;
+    background-color: white;
+    border-top: 1px solid #eee;
+  }
+
+  .btn-outline {
+    display: inline-block;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    padding: 10px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1rem;
+    transition: all 0.2s;
+  }
+
+  .btn-outline:hover {
+    background-color: var(--color-primary);
+    color: white;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .founder-card {
+      flex-direction: column; /* Stack vertically on phone */
+    }
+    .founder-card .img-wrapper {
+      width: 100%;
+      height: 300px;
+    }
+  }
+</style>
