@@ -23,7 +23,14 @@ import Layout from '../layouts/Layout.astro';
         <h2>Send us a Message</h2>
         <p class="form-intro">Fill out the form below to schedule an assessment or ask a question.</p>
 
-        <form class="contact-form">
+        <form
+          action="https://api.web3forms.com/submit"
+          method="POST"
+          class="contact-form"
+        >
+          <input type="hidden" name="access_key" value="35fbd206-d7e8-49fe-8814-07e5ecdb2337">
+
+          <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
           <div class="form-group">
             <label for="name">Parent's Name</label>
@@ -47,6 +54,7 @@ import Layout from '../layouts/Layout.astro';
 
           <button type="submit" class="btn-submit">Send Message</button>
         </form>
+
       </div>
 
       <div class="info-wrapper">

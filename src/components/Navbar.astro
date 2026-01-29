@@ -77,4 +77,43 @@
     background-color: var(--color-secondary); /* Turns Orange on hover */
     color: white;
   }
+  /* =========================================
+     MOBILE SCROLL FIX (v1.1)
+     ========================================= */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column; /* Stack Logo on top, Menu below */
+      align-items: flex-start; /* Align everything to the left */
+      gap: 1rem; /* Space between Logo and Menu */
+      padding-bottom: 0.5rem; /* Little padding at bottom */
+    }
+
+    .nav-links {
+      width: 100%; /* Force menu to take full width */
+      justify-content: flex-start; /* Start items from the left */
+      overflow-x: auto; /* ENABLE SCROLLING */
+      padding-bottom: 10px; /* Room for touch interaction */
+      gap: 20px; /* Slightly tighter gap on mobile */
+
+      /* Smooth scrolling for iOS */
+      -webkit-overflow-scrolling: touch;
+
+      /* Hide the ugly scrollbar (but keep functionality) */
+      scrollbar-width: none;  /* Firefox */
+      -ms-overflow-style: none;  /* IE 10+ */
+    }
+
+    .nav-links::-webkit-scrollbar {
+      display: none; /* Chrome/Safari */
+    }
+
+    .nav-links li {
+      flex-shrink: 0; /* Stop links from squishing! */
+    }
+
+    /* Optional: Make the button look like a link on mobile to fit in better */
+    .btn-contact {
+      white-space: nowrap; /* Prevent text wrapping */
+    }
+  }
 </style>
