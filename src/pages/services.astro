@@ -1,0 +1,251 @@
+---
+/* =========================================
+   FILE: src/pages/services.astro
+   VERSION: 1.0
+   DESCRIPTION: Detailed list of all therapy services
+   ========================================= */
+
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <section class="page-header">
+    <div class="container">
+      <h1>Our Clinical Services</h1>
+      <p>Holistic, evidence-based therapies tailored to your child's needs.</p>
+    </div>
+  </section>
+
+  <section class="services-content">
+    <div class="container">
+
+      <div class="service-row" id="speech">
+        <div class="text-col">
+          <div class="icon-header">
+            <span class="icon">🗣️</span>
+            <h2>Speech & Language Therapy</h2>
+          </div>
+          <p>
+            Our speech therapy program focuses on helping children express themselves clearly and confidently.
+            Whether your child has a delay in speech development, stuttering issues, or social communication challenges,
+            our certified therapists create fun, engaging sessions to build these vital skills.
+          </p>
+          <ul class="benefits-list">
+            <li>Articulation & Phonology (Clarity of speech)</li>
+            <li>Receptive & Expressive Language</li>
+            <li>Fluency (Stuttering therapy)</li>
+            <li>Social Skills & Pragmatics</li>
+          </ul>
+        </div>
+        <div class="img-col">
+           <img src="https://placehold.co/500x350/267c88/white?text=Speech+Therapy" alt="Speech Therapy Session" />
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <div class="service-row reverse" id="occupational">
+        <div class="text-col">
+          <div class="icon-header">
+            <span class="icon">🧩</span>
+            <h2>Occupational Therapy (OT)</h2>
+          </div>
+          <p>
+            Occupational therapy helps children gain independence in their daily lives. We focus on fine motor skills
+            (like writing and gripping), sensory processing, and self-care routines. Our goal is to help your child
+            participate fully in school and play.
+          </p>
+          <ul class="benefits-list">
+             <li>Fine Motor Skills (Writing, Buttoning)</li>
+             <li>Sensory Integration Therapy</li>
+             <li>Hand-Eye Coordination</li>
+             <li>Activities of Daily Living (ADLs)</li>
+          </ul>
+        </div>
+        <div class="img-col">
+          <img src="https://placehold.co/500x350/f4a261/white?text=Occupational+Therapy" alt="OT Session" />
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <div class="service-row" id="special-ed">
+        <div class="text-col">
+          <div class="icon-header">
+            <span class="icon">📚</span>
+            <h2>Special Education</h2>
+          </div>
+          <p>
+            Our special educators work one-on-one with children to bridge learning gaps. We use individualized
+            strategies to teach reading, writing, and math in a way that makes sense to *your* child, moving beyond
+            standard classroom methods.
+          </p>
+          <ul class="benefits-list">
+            <li>Individualized Education Plans (IEP)</li>
+            <li>Remedial Teaching for Learning Disabilities</li>
+            <li>School Readiness Programs</li>
+            <li>Cognitive Skill Development</li>
+          </ul>
+        </div>
+        <div class="img-col">
+          <img src="https://placehold.co/500x350/267c88/white?text=Special+Education" alt="Special Education Class" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container center">
+      <h2>Not sure which service you need?</h2>
+      <p>Book an initial assessment and let our experts guide you.</p>
+      <a href="/contact" class="btn-cta">Book Assessment</a>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  /* =========================================
+     STYLES: Version 1.0
+     ========================================= */
+
+  .page-header {
+    background-color: var(--color-primary); /* Teal */
+    color: white;
+    padding: 3rem 20px;
+    text-align: center;
+  }
+
+  .services-content {
+    padding: 4rem 20px;
+    background-color: white;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* Service Row Layout */
+  .service-row {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    padding: 2rem 0;
+  }
+
+  /* Reverse layout for the middle item (OT) */
+  .reverse {
+    flex-direction: row-reverse;
+  }
+
+  .text-col {
+    flex: 1;
+  }
+
+  .img-col {
+    flex: 1;
+  }
+
+  .img-col img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+
+  /* Typography */
+  .icon-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .icon {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    color: var(--color-primary);
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  p {
+    line-height: 1.7;
+    color: #4b5563;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Benefits List */
+  .benefits-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .benefits-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f3f4f6;
+    color: var(--color-text-main);
+    display: flex;
+    align-items: center;
+  }
+
+  .benefits-list li::before {
+    content: "•";
+    color: var(--color-secondary); /* Orange Bullet */
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+    line-height: 1;
+  }
+
+  /* Divider Line */
+  .divider {
+    border: 0;
+    height: 1px;
+    background: #e5e7eb;
+    margin: 2rem 0;
+  }
+
+  /* Bottom CTA */
+  .cta-section {
+    background-color: var(--color-bg-light);
+    padding: 4rem 20px;
+    text-align: center;
+  }
+
+  .btn-cta {
+    background-color: var(--color-secondary);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 1rem;
+  }
+
+  .btn-cta:hover {
+    background-color: #e7904e;
+  }
+
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .service-row, .reverse {
+      flex-direction: column; /* Stack everything on mobile */
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .icon-header {
+      justify-content: center;
+    }
+
+    .benefits-list li {
+        justify-content: center; /* Center list items on mobile */
+    }
+  }
+</style>

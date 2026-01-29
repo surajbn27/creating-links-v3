@@ -1,0 +1,234 @@
+---
+/* =========================================
+   FILE: src/pages/contact.astro
+   VERSION: 1.0
+   DESCRIPTION: Contact page with Form and Map
+   ========================================= */
+
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <section class="page-header">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>We are here to answer your questions and support your family.</p>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="container grid">
+
+      <div class="form-wrapper">
+        <h2>Send us a Message</h2>
+        <p class="form-intro">Fill out the form below to schedule an assessment or ask a question.</p>
+
+        <form class="contact-form">
+
+          <div class="form-group">
+            <label for="name">Parent's Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="email@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">How can we help?</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us a bit about your child's needs..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Send Message</button>
+        </form>
+      </div>
+
+      <div class="info-wrapper">
+
+        <div class="info-card">
+          <h3>Clinic Information</h3>
+
+          <div class="info-item">
+            <span class="icon">📍</span>
+            <div>
+              <strong>Address:</strong>
+              <p>123 Clinic Road, Indiranagar<br>Bengaluru, Karnataka 560038</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <span class="icon">📞</span>
+            <div>
+              <strong>Phone:</strong>
+              <p>+91 98765 43210</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <span class="icon">✉️</span>
+            <div>
+              <strong>Email:</strong>
+              <p>help@creatinglinks.com</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <span class="icon">⏰</span>
+            <div>
+              <strong>Hours:</strong>
+              <p>Mon - Sat: 9:00 AM - 7:00 PM<br>Sunday: Closed</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248849.886539092!2d77.49085516212503!3d12.953959988118836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                width="100%"
+                height="300"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy">
+            </iframe>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* =========================================
+     STYLES: Version 1.0
+     ========================================= */
+
+  /* Header Styling */
+  .page-header {
+    background-color: var(--color-primary); /* Teal */
+    color: white;
+    padding: 3rem 20px;
+    text-align: center;
+  }
+
+  .contact-section {
+    padding: 4rem 20px;
+    background-color: white;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr; /* Form is wider (60%), Info is narrower (40%) */
+    gap: 4rem;
+  }
+
+  /* Form Styling */
+  .form-wrapper h2 {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .form-intro {
+    color: #666;
+    margin-bottom: 2rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--color-text-main);
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s;
+  }
+
+  input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(38, 124, 136, 0.1);
+  }
+
+  .btn-submit {
+    background-color: var(--color-secondary); /* Orange */
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    transition: background-color 0.2s;
+  }
+
+  .btn-submit:hover {
+    background-color: #e7904e; /* Slightly darker orange */
+  }
+
+  /* Info Card Styling */
+  .info-card {
+    background-color: var(--color-bg-light);
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+  }
+
+  .info-card h3 {
+    margin-bottom: 1.5rem;
+    color: var(--color-primary);
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 0.5rem;
+  }
+
+  .info-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .icon {
+    font-size: 1.5rem;
+  }
+
+  .info-item strong {
+    display: block;
+    color: var(--color-text-main);
+    margin-bottom: 0.2rem;
+  }
+
+  .info-item p {
+    margin: 0;
+    color: #666;
+    line-height: 1.4;
+  }
+
+  .map-container iframe {
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr; /* Stack them */
+    }
+  }
+</style>

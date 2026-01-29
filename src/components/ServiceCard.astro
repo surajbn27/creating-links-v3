@@ -1,0 +1,68 @@
+---
+/* src/components/ServiceCard.astro */
+const { title, description, icon } = Astro.props;
+---
+
+<div class="service-card">
+  <div class="icon-wrapper">
+    <span class="icon">{icon}</span>
+  </div>
+  <h3>{title}</h3>
+  <p>{description}</p>
+  <a href="/services" class="learn-more">Learn More &rarr;</a>
+</div>
+
+<style>
+  .service-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Soft shadow */
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #eee;
+    text-align: center;
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px); /* Pops up slightly on hover */
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    border-color: var(--color-primary); /* Border turns Teal */
+  }
+
+  .icon-wrapper {
+    background-color: var(--color-bg-light);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem auto;
+  }
+
+  .icon {
+    font-size: 2rem;
+  }
+
+  h3 {
+    color: var(--color-primary); /* Teal Title */
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+
+  p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .learn-more {
+    color: var(--color-secondary); /* Orange Link */
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .learn-more:hover {
+    text-decoration: underline;
+  }
+</style>

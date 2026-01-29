@@ -1,0 +1,100 @@
+---
+/* src/components/Footer.astro */
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container">
+
+    <div class="footer-col">
+      <h3>Creating Links</h3>
+      <p>Empowering children and families through specialized therapy and education.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <p>📍 123 Clinic Road, Bangalore</p>
+      <p>📞 +91 98765 43210</p>
+      <p>✉️ help@creatinglinks.com</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; {currentYear} Creating Links Therapy. All rights reserved.</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: var(--color-text-main); /* Dark Grey */
+    color: white;
+    padding-top: 4rem;
+    margin-top: auto; /* Pushes footer to bottom if page is short */
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  h3 {
+    color: var(--color-primary); /* TEAL Brand Name */
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+    color: #e5e7eb;
+  }
+
+  p {
+    color: #d1d5db; /* Light grey text */
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 0.8rem;
+  }
+
+  a {
+    color: #d1d5db;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  a:hover {
+    color: var(--color-primary); /* Turns TEAL on hover */
+  }
+
+  .footer-bottom {
+    background-color: rgba(0,0,0,0.2); /* Slightly darker shade */
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 0.9rem;
+    color: #9ca3af;
+  }
+</style>

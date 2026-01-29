@@ -1,0 +1,62 @@
+---
+/* src/components/ServicesSection.astro */
+import ServiceCard from './ServiceCard.astro';
+---
+
+<section class="services-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Our Therapy Services</h2>
+      <p>Comprehensive care tailored to your child's developmental journey.</p>
+    </div>
+
+    <div class="grid">
+      <ServiceCard
+        title="Speech Therapy"
+        icon="🗣️"
+        description="Helping children improve communication skills, articulation, and language comprehension."
+      />
+
+      <ServiceCard
+        title="Occupational Therapy"
+        icon="🧩"
+        description="Developing fine motor skills, sensory processing, and daily living independence."
+      />
+
+      <ServiceCard
+        title="Special Education"
+        icon="📚"
+        description="Individualized learning strategies to support academic and cognitive growth."
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .services-section {
+    padding: 5rem 20px;
+    background-color: white;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    color: var(--color-text-main);
+    margin-bottom: 0.5rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Auto-responsive grid */
+    gap: 2rem;
+  }
+</style>

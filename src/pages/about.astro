@@ -1,0 +1,161 @@
+---
+/* src/pages/about.astro */
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <section class="page-header">
+    <div class="container">
+      <h1>About Creating Links</h1>
+      <p>Dedicated to supporting families and empowering children.</p>
+    </div>
+  </section>
+
+  <section class="section story">
+    <div class="container grid">
+
+      <div class="content">
+        <h2>Our Mission</h2>
+        <p>
+          At Creating Links, we believe that every child has a unique potential waiting to be unlocked.
+          Founded by [Founder Name], our clinic was built on the principle that therapy should be
+          holistic, family-centered, and compassionate.
+        </p>
+        <p>
+          We don't just treat "symptoms"; we build relationships. Our multidisciplinary team works
+          together to create personalized strategies that help your child thrive at home, at school,
+          and in the community.
+        </p>
+
+        <h3>Why Choose Us?</h3>
+        <ul class="check-list">
+          <li>✅ Experienced, certified therapists</li>
+          <li>✅ Individualized Education Plans (IEP)</li>
+          <li>✅ Parent training and support groups</li>
+          <li>✅ Safe, sensory-friendly environment</li>
+        </ul>
+      </div>
+
+      <div class="image-wrapper">
+        <img src="https://placehold.co/600x600/267c88/white?text=Our+Clinic+Team" alt="Our Team" />
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-strip">
+    <div class="container">
+      <h2>Ready to start your journey?</h2>
+      <a href="/contact" class="btn-white">Contact Us Today</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Page Header Styles */
+  .page-header {
+    background-color: var(--color-primary); /* Teal Background */
+    color: white;
+    padding: 4rem 20px;
+    text-align: center;
+  }
+
+  .page-header h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .page-header p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+  }
+
+  /* General Section Styles */
+  .section {
+    padding: 5rem 20px;
+  }
+
+  .container {
+    max-width: 1000px; /* Slightly narrower for reading text */
+    margin: 0 auto;
+  }
+
+  /* Grid Layout for Story */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  h2 {
+    color: var(--color-primary);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    color: #4b5563;
+    font-size: 1.1rem;
+  }
+
+  .image-wrapper img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  }
+
+  /* Checklist Styles */
+  .check-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+  }
+
+  .check-list li {
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+    color: var(--color-text-main);
+  }
+
+  /* CTA Strip (Orange/Accent) */
+  .cta-strip {
+    background-color: var(--color-secondary); /* Orange */
+    padding: 3rem 20px;
+    text-align: center;
+    color: white;
+  }
+
+  .cta-strip h2 {
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+
+  .btn-white {
+    background-color: white;
+    color: var(--color-secondary);
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: transform 0.2s;
+  }
+
+  .btn-white:hover {
+    transform: scale(1.05);
+  }
+
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr; /* Stack text and image */
+    }
+    .image-wrapper {
+      order: -1; /* Show image on top on mobile */
+      margin-bottom: 2rem;
+    }
+  }
+</style>

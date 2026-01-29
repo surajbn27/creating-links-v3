@@ -1,0 +1,36 @@
+:root {
+  /* CLINIC BRANDING SYSTEM */
+  --color-primary: #267c88;       /* The "Creating Links" Teal */
+  --color-secondary: #f4a261;     /* Warm accent for buttons/highlights */
+
+  --color-text-main: #1f2937;     /* Dark Grey (professional, readable) */
+  --color-text-light: #ffffff;    /* White text for buttons/banners */
+  --color-bg-light: #f9fafb;      /* Very light grey background */
+  --color-bg-white: #ffffff;
+}
+
+html {
+  font-family: system-ui, sans-serif;
+  background: var(--color-bg-light);
+  color: var(--color-text-main);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Common Utility Classes */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem; /* Rounded corners */
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.text-primary {
+  color: var(--color-primary);
+}

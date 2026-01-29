@@ -1,0 +1,107 @@
+---
+/* src/components/Hero.astro */
+---
+<section class="hero">
+  <div class="container">
+
+    <div class="hero-content">
+      <h1>Empowering Your Child's <span class="highlight">Unique Potential</span></h1>
+      <p>
+        At Creating Links, we provide specialized speech therapy, occupational therapy,
+        and special education tailored to your child's needs.
+      </p>
+      <div class="hero-buttons">
+        <a href="/contact" class="btn btn-primary">Book an Assessment</a>
+        <a href="/services" class="btn btn-outline">View Services</a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="https://placehold.co/600x400/267c88/white?text=Clinic+Photo" alt="Therapy Session" />
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding: 4rem 20px;
+    background-color: var(--color-bg-light); /* Light Grey background */
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Split 50/50 */
+    gap: 4rem;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: var(--color-text-main);
+  }
+
+  .highlight {
+    color: var(--color-primary); /* Teal Text */
+  }
+
+  p {
+    font-size: 1.25rem;
+    color: #4b5563;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  /* Button Styles */
+  .btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .btn-primary {
+    background-color: var(--color-secondary); /* ORANGE Button */
+    color: white;
+  }
+  .btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+
+  .btn-outline {
+    border: 2px solid var(--color-primary); /* TEAL Border */
+    color: var(--color-primary);
+  }
+  .btn-outline:hover {
+    background-color: var(--color-primary);
+    color: white;
+  }
+
+  .hero-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .container {
+      grid-template-columns: 1fr; /* Stack on top of each other */
+      text-align: center;
+    }
+    .hero-buttons {
+      justify-content: center;
+    }
+  }
+</style>
