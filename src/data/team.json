@@ -22,5 +22,13 @@
     "bio": "Passionate about creating individualized learning plans for school readiness.",
     "image": "https://placehold.co/400x400/f4a261/white?text=Therapist",
     "is_founder": false
+  },
+  {
+    "name": "Jane Doe",
+    "role": "Junior Special Educator",
+    "qualifications": "MPhil",
+    "bio": "Passionate about creating individualized learning plans for school readiness.",
+    "image": "https://placehold.co/400x400/f4a261/white?text=Therapist",
+    "is_founder": false
   }
 ]

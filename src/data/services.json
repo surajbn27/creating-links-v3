@@ -1,0 +1,54 @@
+[
+  {
+    "id": "speech",
+    "title": "Speech & Language Therapy",
+    "icon": "🗣️",
+    "description": "Our speech therapy program focuses on helping children express themselves clearly and confidently. We create fun, engaging sessions to build vital communication skills.",
+    "image": "https://placehold.co/500x350/267c88/white?text=Speech+Therapy",
+    "benefits": [
+      "Articulation & Phonology (Clarity)",
+      "Receptive & Expressive Language",
+      "Fluency (Stuttering therapy)",
+      "Social Skills & Pragmatics"
+    ]
+  },
+  {
+    "id": "occupational",
+    "title": "Occupational Therapy (OT)",
+    "icon": "🧩",
+    "description": "Occupational therapy helps children gain independence in their daily lives. We focus on fine motor skills, sensory processing, and self-care routines.",
+    "image": "https://placehold.co/500x350/f4a261/white?text=Occupational+Therapy",
+    "benefits": [
+      "Fine Motor Skills (Writing, Gripping)",
+      "Sensory Integration Therapy",
+      "Hand-Eye Coordination",
+      "Activities of Daily Living (ADLs)"
+    ]
+  },
+  {
+    "id": "special-ed",
+    "title": "Special Education",
+    "icon": "📚",
+    "description": "Our special educators work one-on-one with children to bridge learning gaps using individualized strategies that move beyond standard classroom methods.",
+    "image": "https://placehold.co/500x350/267c88/white?text=Special+Education",
+    "benefits": [
+      "Individualized Education Plans (IEP)",
+      "Remedial Teaching for Learning Disabilities",
+      "Cognitive Skill Development",
+      "Academic Support"
+    ]
+  },
+  {
+    "id": "school-readiness",
+    "title": "School Readiness Program",
+    "icon": "🎒",
+    "description": "A specialized program designed to prepare young children for the transition to formal schooling, focusing on social, emotional, and foundational academic skills.",
+    "image": "https://placehold.co/500x350/e76f51/white?text=School+Readiness",
+    "benefits": [
+      "Classroom Behavior & Routine",
+      "Social Interaction with Peers",
+      "Pre-writing & Pre-reading Skills",
+      "Following Group Instructions"
+    ]
+  }
+]
