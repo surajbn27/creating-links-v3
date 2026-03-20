@@ -1,122 +1,172 @@
 [
   {
+    "id": "early-intervention",
+    "title": "Early Intervention",
+    "subtitle": "(1–3 Years)",
+    "icon": "🌱",
+    "shortDescription": "Targeted support during the most critical window of brain development for children aged 1–3 years.",
+    "description": "The first three years of life are the most important for brain development. Our Early Intervention program identifies developmental delays early and provides structured, play-based therapy to help young children reach their milestones. We work closely with families to ensure progress continues at home.",
+    "image": "/images/services/early-intervention.jpg",
+    "benefits": [
+      "Early identification of developmental delays",
+      "Play-based, child-led therapy sessions",
+      "Parent coaching and home programme guidance",
+      "Improved communication and social skills",
+      "Stronger foundation for school readiness",
+      "Regular progress monitoring and IEP updates"
+    ]
+  },
+  {
     "id": "occupational-therapy",
-    "title": "Occupational Therapy (OT)",
-    "icon": "🧩",
-    "shortDescription": "Helping children gain independence in daily life through fine motor skills, sensory processing, and self-care routines.",
-    "description": "Our occupational therapy program, led by Dr. Bhuvanesh R, focuses on helping children gain independence in their daily lives. We work on fine motor skills, sensory processing, hand-eye coordination, and self-care routines through engaging, play-based sessions tailored to each child's needs.",
-    "image": "https://placehold.co/500x350/267c88/white?text=Occupational+Therapy",
+    "title": "Occupational Therapy",
+    "subtitle": "",
+    "icon": "🖐️",
+    "shortDescription": "Helping children develop the essential skills needed for daily living, learning, and independence.",
+    "description": "Occupational Therapy at Creating Links focuses on building functional independence in children. Our certified occupational therapists assess each child's unique needs and design personalised programmes targeting fine motor skills, self-care, handwriting, play skills, and daily routines.",
+    "image": "/images/services/occupational-therapy.jpg",
     "benefits": [
-      "Fine Motor Skills (Writing, Gripping, Cutting)",
-      "Sensory Integration Therapy",
-      "Hand-Eye Coordination",
-      "Activities of Daily Living (ADLs)",
-      "Self-Care & Independence Training"
-    ]
-  },
-  {
-    "id": "speech-therapy",
-    "title": "Speech & Language Therapy",
-    "icon": "🗣️",
-    "shortDescription": "Building communication skills, articulation, and language comprehension through fun, engaging sessions.",
-    "description": "Our speech therapy program focuses on helping children express themselves clearly and confidently. We create fun, engaging sessions to build vital communication skills including articulation, language comprehension, fluency, and social communication.",
-    "image": "https://placehold.co/500x350/f4a261/white?text=Speech+Therapy",
-    "benefits": [
-      "Articulation & Phonology (Speech Clarity)",
-      "Receptive & Expressive Language",
-      "Fluency (Stuttering Therapy)",
-      "Social Skills & Pragmatics",
-      "Functional Communication Training (FCT)"
-    ]
-  },
-  {
-    "id": "school-readiness",
-    "title": "School Readiness Program",
-    "icon": "🎒",
-    "shortDescription": "Preparing children for mainstream school through structured learning, social skills, and classroom readiness.",
-    "description": "Our signature School Readiness Program bridges the gap between home and the structured school environment. We focus on the holistic needs of every child — from imitation and observational learning to pre-academic skills and emotional regulation — across three progressive levels.",
-    "image": "https://placehold.co/500x350/267c88/white?text=School+Readiness",
-    "benefits": [
-      "Classroom Behavior & Routine Training",
-      "Social Interaction with Peers",
-      "Pre-Writing & Pre-Reading Skills",
-      "Cognitive & Pre-Academic Skills",
-      "Emotional Regulation & Self-Care"
-    ]
-  },
-  {
-    "id": "behavioral-therapy",
-    "title": "Behavioral Therapy",
-    "icon": "🧠",
-    "shortDescription": "Evidence-based strategies to manage challenging behaviors and build positive habits for children.",
-    "description": "Our behavioral therapy uses evidence-based approaches to help children manage challenging behaviors and develop positive habits. We work closely with parents to create consistent strategies that can be applied at home, school, and in the community.",
-    "image": "https://placehold.co/500x350/e76f51/white?text=Behavioral+Therapy",
-    "benefits": [
-      "Applied Behavior Analysis (ABA) Techniques",
-      "Positive Behavior Support",
-      "Social Skills Training",
-      "Parent Coaching & Home Strategies",
-      "Emotional Regulation Skills"
-    ]
-  },
-  {
-    "id": "special-education",
-    "title": "Special Education",
-    "icon": "📚",
-    "shortDescription": "Individualized learning strategies that bridge learning gaps and build academic confidence.",
-    "description": "Our special educators work one-on-one with children to bridge learning gaps using individualized strategies that move beyond standard classroom methods. Each child receives a personalized Individualized Education Plan (IEP) designed to support their unique learning profile.",
-    "image": "https://placehold.co/500x350/267c88/white?text=Special+Education",
-    "benefits": [
-      "Individualized Education Plans (IEP)",
-      "Remedial Teaching for Learning Disabilities",
-      "Cognitive Skill Development",
-      "Academic Support & Tutoring",
-      "NIOS Curriculum Alignment"
-    ]
-  },
-  {
-    "id": "physiotherapy",
-    "title": "Physiotherapy",
-    "icon": "🏃",
-    "shortDescription": "Improving movement, strength, balance, and coordination through targeted physical therapy.",
-    "description": "Our physiotherapy services focus on improving children's gross motor skills, strength, balance, and overall physical coordination. Through structured exercises and play-based activities, we help children achieve physical milestones and improve their confidence in movement.",
-    "image": "https://placehold.co/500x350/f4a261/white?text=Physiotherapy",
-    "benefits": [
-      "Gross Motor Skill Development",
-      "Strength & Balance Training",
-      "Postural Correction",
-      "Coordination & Movement Planning",
-      "Gait Training & Mobility Support"
+      "Fine motor and hand strength development",
+      "Improved self-care skills (dressing, feeding, hygiene)",
+      "Handwriting and pencil grip training",
+      "Attention and focus improvement",
+      "Play skill development and social participation",
+      "Individualised Education Plan (IEP) support"
     ]
   },
   {
     "id": "sensory-integration",
     "title": "Sensory Integration",
-    "icon": "✨",
-    "shortDescription": "Helping children process and respond to sensory input for better focus, calm, and participation.",
-    "description": "Sensory integration therapy helps children who have difficulty processing sensory information from their environment. Through structured sensory activities, we help children improve their ability to focus, stay calm, and participate meaningfully in everyday activities.",
-    "image": "https://placehold.co/500x350/267c88/white?text=Sensory+Integration",
+    "subtitle": "",
+    "icon": "🎯",
+    "shortDescription": "Helping children process and respond to sensory information from their environment more effectively.",
+    "description": "Many children struggle to process sensory information — sounds, touch, movement, or textures — in a typical way. Our Sensory Integration therapy uses structured, play-based activities to help the brain organise sensory input, reducing overreactions or under-responses that affect behaviour and learning.",
+    "image": "/images/services/sensory-integration.jpg",
     "benefits": [
-      "Sensory Processing Assessment",
-      "Tactile & Vestibular Activities",
-      "Visual & Auditory Processing Support",
-      "Self-Regulation Strategies",
-      "Sensory Diet Planning"
+      "Reduced sensory overload and meltdowns",
+      "Improved balance and body awareness",
+      "Better tolerance to touch, sound, and movement",
+      "Enhanced attention and regulation",
+      "Improved motor coordination",
+      "Calmer, more adaptive behaviour in daily life"
     ]
   },
   {
-    "id": "early-intervention",
-    "title": "Early Intervention",
-    "icon": "🌱",
-    "shortDescription": "Targeted support for infants and toddlers to address developmental delays as early as possible.",
-    "description": "Our early intervention program provides targeted support for infants and toddlers (0-3 years) showing developmental delays. Early identification and intervention can significantly improve outcomes, and we work hand-in-hand with parents to support their child's growth during these critical early years.",
-    "image": "https://placehold.co/500x350/e76f51/white?text=Early+Intervention",
+    "id": "behavioral-therapy",
+    "title": "Behavioral Therapy",
+    "subtitle": "",
+    "icon": "🧠",
+    "shortDescription": "Evidence-based strategies to understand and positively shape children's behaviour and emotional regulation.",
+    "description": "Our Behavioral Therapy programme uses evidence-based approaches to help children understand their emotions, manage challenging behaviours, and develop positive social interactions. We work with families to implement consistent strategies at home, school, and in the community.",
+    "image": "/images/services/behavioral-therapy.jpg",
     "benefits": [
-      "Developmental Milestone Screening",
-      "Parent Coaching & Home Programs",
-      "Play-Based Developmental Activities",
-      "Feeding & Oral Motor Support",
-      "Multi-Disciplinary Team Assessment"
+      "Reduced challenging and disruptive behaviours",
+      "Improved emotional regulation and self-control",
+      "Social skills and peer interaction training",
+      "Positive reinforcement-based strategies",
+      "Parent and caregiver training",
+      "Functional Behaviour Assessment (FBA)"
+    ]
+  },
+  {
+    "id": "speech-therapy",
+    "title": "Speech & Language Therapy",
+    "subtitle": "",
+    "icon": "🗣️",
+    "shortDescription": "Building communication skills through targeted speech, language, and AAC interventions.",
+    "description": "Our Speech and Language therapists work with children who have delays or disorders in speech, language, or communication. Whether a child is non-verbal, has articulation difficulties, or struggles with understanding language, we provide tailored therapy including AAC tools such as PECS and AVAZ.",
+    "image": "/images/services/speech-therapy.jpg",
+    "benefits": [
+      "Improved articulation and speech clarity",
+      "Language comprehension and expression",
+      "AAC support: PECS, AVAZ, and communication boards",
+      "Fluency and stuttering therapy",
+      "Social communication and pragmatic skills",
+      "Functional Communication Training (FCT)"
+    ]
+  },
+  {
+    "id": "group-therapy",
+    "title": "Group Therapy",
+    "subtitle": "",
+    "icon": "👥",
+    "shortDescription": "Structured group sessions that build social skills, peer interaction, and teamwork in a safe setting.",
+    "description": "Group Therapy at Creating Links brings children together in small, structured groups to practise real-world social skills. Sessions are facilitated by our therapists and include cooperative activities, educational outings, and peer learning opportunities that prepare children for inclusive environments.",
+    "image": "/images/services/group-therapy.jpg",
+    "benefits": [
+      "Peer interaction and friendship-building",
+      "Turn-taking, sharing, and cooperation",
+      "Generalisation of skills to real-world settings",
+      "Educational and community outings",
+      "Confidence and independence building",
+      "Small group sizes for focused support"
+    ]
+  },
+  {
+    "id": "school-readiness",
+    "title": "School Readiness Program",
+    "subtitle": "",
+    "icon": "📚",
+    "shortDescription": "A structured programme preparing children for mainstream or NIOS school environments at their own pace.",
+    "description": "Our School Readiness Program bridges the gap between home and school using a three-level framework — Wings to Fly, Ready to Soar, and Sky's the Limit. We address imitation, communication, cognitive skills, social-emotional regulation, and daily living skills using a data-driven, IEP-based approach.",
+    "image": "/images/services/school-readiness.jpg",
+    "benefits": [
+      "Three-level programme: Wings to Fly → Ready to Soar → Sky's the Limit",
+      "Individualised Education Plans (IEP) for every child",
+      "1:3 and 1:2 therapist-to-child ratios",
+      "Data-driven monthly progress tracking",
+      "Yoga, educational trips, and group learning included",
+      "Pathway to mainstream or NIOS school integration"
+    ]
+  },
+  {
+    "id": "special-education",
+    "title": "Special Education",
+    "subtitle": "",
+    "icon": "🎓",
+    "shortDescription": "Personalised academic and life skills instruction adapted to each child's unique learning profile.",
+    "description": "Our Special Education programme provides individualised academic instruction for children with learning disabilities, intellectual disabilities, autism, and other developmental conditions. Our special educators use multi-sensory teaching methods, assistive tools, and differentiated curriculum to help each child succeed.",
+    "image": "/images/services/special-education.jpg",
+    "benefits": [
+      "Curriculum adapted to individual learning level",
+      "Multi-sensory and activity-based teaching",
+      "Reading, writing, and numeracy skill building",
+      "NIOS programme support",
+      "Social and life skills integration",
+      "Regular assessment and curriculum updates"
+    ]
+  },
+  {
+    "id": "physiotherapy",
+    "title": "Physiotherapy",
+    "subtitle": "",
+    "icon": "🏃",
+    "shortDescription": "Improving movement, strength, and physical function to help children participate fully in everyday life.",
+    "description": "Our paediatric physiotherapy programme addresses gross motor delays, muscle tone issues, coordination difficulties, and postural concerns. Therapists design movement-based programmes that improve physical strength, balance, and mobility — enabling children to play, explore, and participate in school activities.",
+    "image": "/images/services/physiotherapy.jpg",
+    "benefits": [
+      "Gross motor skill development",
+      "Improved balance and coordination",
+      "Muscle tone and strength training",
+      "Postural correction and core stability",
+      "Gait and walking pattern improvement",
+      "Active play and sports participation"
+    ]
+  },
+  {
+    "id": "vocational-training",
+    "title": "Vocational Training",
+    "subtitle": "",
+    "icon": "🍳",
+    "shortDescription": "Life skills and pre-vocational programmes that build independence and confidence in older children and young adults.",
+    "description": "Our Vocational Training programme prepares older children and young adults with special needs for greater independence. Through practical life-skills activities — including our signature Fearless Cooking sessions, hygiene routines, money management, and community participation — we build the functional skills needed for adult life.",
+    "image": "/images/services/vocational-training.jpg",
+    "benefits": [
+      "Practical cooking and kitchen safety skills",
+      "Personal hygiene and self-care independence",
+      "Money handling and basic financial literacy",
+      "Community participation and travel training",
+      "Pre-employment and work readiness skills",
+      "Confidence, dignity, and self-advocacy"
     ]
   }
 ]
