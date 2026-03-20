@@ -1,8 +1,10 @@
-Speech Therapy
-Occupational Therapy
-Behavioral Therapy
-Special Education
-School Readiness Program
-Physiotherapy
+Early Intervention (1-3 years)
+Occupational Therapy (OT)
 Sensory Integration
-Early Intervention
+Behavioral Therapy
+Speech & Language Therapy
+Group Therapy
+School Readiness Program
+Special Education
+Physiotherapy
+Vocational Training
