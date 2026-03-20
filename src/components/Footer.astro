@@ -1,14 +1,14 @@
 ---
-/* src/components/Footer.astro */
 const currentYear = new Date().getFullYear();
 ---
 
 <footer class="footer">
-  <div class="container">
+  <div class="footer-container">
 
-    <div class="footer-col">
-      <h3>Creating Links</h3>
-      <p>Empowering children and families through specialized therapy and education.</p>
+    <div class="footer-col brand-col">
+      <h3>🔗 Creating Links</h3>
+      <p>Empowering children and families through specialized therapy, education, and compassionate care in Bengaluru.</p>
+      <p class="tagline">A way to redesign your life.</p>
     </div>
 
     <div class="footer-col">
@@ -17,84 +17,115 @@ const currentYear = new Date().getFullYear();
         <li><a href="/">Home</a></li>
         <li><a href="/about">About Us</a></li>
         <li><a href="/services">Services</a></li>
+        <li><a href="/team">Our Team</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
     </div>
 
     <div class="footer-col">
+      <h4>Our Services</h4>
+      <ul>
+        <li><a href="/services#occupational-therapy">Occupational Therapy</a></li>
+        <li><a href="/services#speech-therapy">Speech Therapy</a></li>
+        <li><a href="/services#school-readiness">School Readiness</a></li>
+        <li><a href="/services#behavioral-therapy">Behavioral Therapy</a></li>
+        <li><a href="/services#special-education">Special Education</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
       <h4>Contact Us</h4>
-      <p>📍 123 Clinic Road, Bangalore</p>
-      <p>📞 +91 98765 43210</p>
-      <p>✉️ help@creatinglinks.com</p>
+      <p>📍 4C, 912, 4th Cross, HRBR Layout 1st Block, Kalyan Nagar, Bengaluru 560043</p>
+      <p>📞 <a href="tel:+918185272466">+91 81852 72466</a></p>
+      <p>✉️ <a href="mailto:creatinglinks22@gmail.com">creatinglinks22@gmail.com</a></p>
     </div>
 
   </div>
 
   <div class="footer-bottom">
-    <p>&copy; {currentYear} Creating Links Therapy. All rights reserved.</p>
+    <p>&copy; {currentYear} Creating Links Therapy & Development Centre. All rights reserved.</p>
   </div>
 </footer>
 
 <style>
   .footer {
-    background-color: var(--color-text-main); /* Dark Grey */
-    color: white;
-    padding-top: 4rem;
-    margin-top: auto; /* Pushes footer to bottom if page is short */
+    background-color: #1a2332;
+    color: #d1d5db;
+    padding-top: 3.5rem;
+    margin-top: auto;
   }
 
-  .container {
-    max-width: 1200px;
+  .footer-container {
+    max-width: 1140px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 1.25rem 3rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 3rem;
-    padding-bottom: 3rem;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: 2.5rem;
   }
 
-  h3 {
-    color: var(--color-primary); /* TEAL Brand Name */
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+  .brand-col h3 {
+    color: var(--color-primary);
+    font-size: 1.35rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .tagline {
+    font-style: italic;
+    color: #9ca3af;
+    font-size: 0.9rem;
   }
 
   h4 {
-    font-size: 1.2rem;
-    margin-bottom: 1.2rem;
     color: #e5e7eb;
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
   }
 
   p {
-    color: #d1d5db; /* Light grey text */
+    color: #9ca3af;
     line-height: 1.6;
     margin-bottom: 0.5rem;
+    font-size: 0.9rem;
   }
 
   ul {
     list-style: none;
     padding: 0;
+    margin: 0;
   }
 
   li {
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.6rem;
   }
 
   a {
-    color: #d1d5db;
+    color: #9ca3af;
     text-decoration: none;
     transition: color 0.2s;
+    font-size: 0.9rem;
   }
 
   a:hover {
-    color: var(--color-primary); /* Turns TEAL on hover */
+    color: var(--color-primary);
   }
 
   .footer-bottom {
-    background-color: rgba(0,0,0,0.2); /* Slightly darker shade */
+    background-color: rgba(0,0,0,0.25);
     text-align: center;
-    padding: 1.5rem 0;
-    font-size: 0.9rem;
-    color: #9ca3af;
+    padding: 1.25rem 0;
+  }
+
+  .footer-bottom p {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .footer-container {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
   }
 </style>

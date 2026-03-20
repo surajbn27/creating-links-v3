@@ -1,101 +1,123 @@
 ---
-/* =========================================
-   FILE: src/pages/services.astro
-   VERSION: 1.1
-   DESCRIPTION: Dynamic Services Page reading from JSON
-   CHANGELOG:
-   - v1.1: Refactored to use src/data/services.json
-   - v1.0: Static HTML version
-   ========================================= */
-
 import Layout from '../layouts/Layout.astro';
 import servicesData from '../data/services.json';
 ---
 
-<Layout>
+<Layout title="Our Services — Creating Links" description="Explore our comprehensive therapy services including occupational therapy, speech therapy, school readiness, behavioral therapy, and more.">
+
   <section class="page-header">
     <div class="container">
       <h1>Our Clinical Services</h1>
-      <p>Holistic, evidence-based therapies tailored to your child's needs.</p>
+      <p>Holistic, evidence-based therapies tailored to your child's unique developmental needs.</p>
     </div>
   </section>
 
+  <!-- Quick Nav -->
+  <section class="service-nav">
+    <div class="container">
+      <div class="nav-pills">
+        {servicesData.map((service) => (
+          <a href={`#${service.id}`} class="pill">
+            <span class="pill-icon">{service.icon}</span>
+            <span>{service.title.replace(/ \(.*\)/, '')}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Details -->
   <section class="services-content">
     <div class="container">
-
       {servicesData.map((service, index) => (
-        <>
-          <div class="service-row" class:list={{ 'reverse': index % 2 !== 0 }} id={service.id}>
-
-            <div class="text-col">
-              <div class="icon-header">
-                <span class="icon">{service.icon}</span>
-                <h2>{service.title}</h2>
-              </div>
-
-              <p>{service.description}</p>
-
-              <ul class="benefits-list">
-                {service.benefits.map((benefit) => (
-                  <li>{benefit}</li>
-                ))}
-              </ul>
+        <div class:list={["service-row", { reverse: index % 2 !== 0 }]} id={service.id}>
+          <div class="text-col">
+            <div class="icon-header">
+              <span class="icon">{service.icon}</span>
+              <h2>{service.title}</h2>
             </div>
-
-            <div class="img-col">
-              <img src={service.image} alt={service.title} />
-            </div>
-
+            <p>{service.description}</p>
+            <ul class="benefits-list">
+              {service.benefits.map((benefit) => (
+                <li>{benefit}</li>
+              ))}
+            </ul>
           </div>
-
-          {index !== servicesData.length - 1 && <hr class="divider" />}
-        </>
+          <div class="img-col">
+            <img src={service.image} alt={service.title} loading="lazy" />
+          </div>
+        </div>
       ))}
-
     </div>
   </section>
 
-  <section class="cta-section">
-    <div class="container center">
-      <h2>Not sure which service you need?</h2>
-      <p>Book an initial assessment and let our experts guide you.</p>
-      <a href="/contact" class="btn-cta">Book Assessment</a>
+  <!-- CTA -->
+  <section class="cta-strip">
+    <div class="container">
+      <h2>Not sure which service your child needs?</h2>
+      <p>Book an initial assessment and let our multidisciplinary team guide you.</p>
+      <a href="/contact" class="btn btn-white">Book Assessment</a>
     </div>
   </section>
 
 </Layout>
 
 <style>
-  /* =========================================
-     STYLES: Version 1.1
-     ========================================= */
-
-  .page-header {
-    background-color: var(--color-primary);
-    color: white;
-    padding: 3rem 20px;
-    text-align: center;
+  /* Quick nav pills */
+  .service-nav {
+    padding: 1.5rem 1.25rem;
+    background: white;
+    border-bottom: 1px solid #f3f4f6;
+    position: sticky;
+    top: 55px;
+    z-index: 50;
   }
+  .nav-pills {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding-bottom: 0.25rem;
+    scrollbar-width: none;
+  }
+  .nav-pills::-webkit-scrollbar { display: none; }
+  .pill {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    background: var(--color-bg-light);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-text-main);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+  }
+  .pill:hover {
+    background: var(--color-primary-light);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+  .pill-icon { font-size: 1rem; }
 
+  /* Service content */
   .services-content {
-    padding: 4rem 20px;
-    background-color: white;
+    padding: 3rem 1.25rem;
   }
 
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  /* Service Row Layout */
   .service-row {
     display: flex;
-    gap: 4rem;
+    gap: 3rem;
     align-items: center;
-    padding: 2rem 0;
+    padding: 3rem 0;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .service-row:last-child {
+    border-bottom: none;
   }
 
-  /* Reverse layout for odd numbers (index 1, 3, etc.) */
   .reverse {
     flex-direction: row-reverse;
   }
@@ -105,90 +127,77 @@ import servicesData from '../data/services.json';
 
   .img-col img {
     width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
   }
 
-  /* Typography */
   .icon-header {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.75rem;
     margin-bottom: 1rem;
   }
 
-  .icon { font-size: 2.5rem; }
+  .icon { font-size: 2.25rem; }
 
-  h2 {
+  .icon-header h2 {
     color: var(--color-primary);
-    font-size: 2rem;
+    font-size: 1.75rem;
     margin: 0;
   }
 
   p {
     line-height: 1.7;
-    color: #4b5563;
-    font-size: 1.1rem;
+    color: var(--color-text-body);
+    font-size: 1.05rem;
     margin-bottom: 1.5rem;
   }
 
-  /* Benefits List */
   .benefits-list {
     list-style: none;
     padding: 0;
+    margin: 0;
   }
 
   .benefits-list li {
     padding: 0.5rem 0;
-    border-bottom: 1px solid #f3f4f6;
     color: var(--color-text-main);
+    font-size: 0.95rem;
     display: flex;
     align-items: center;
+    gap: 0.5rem;
   }
 
   .benefits-list li::before {
-    content: "•";
-    color: var(--color-secondary);
-    font-weight: bold;
-    font-size: 1.5rem;
-    margin-right: 0.5rem;
-    line-height: 1;
+    content: "✓";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    border-radius: 50%;
+    font-size: 0.7rem;
+    font-weight: 700;
+    flex-shrink: 0;
   }
-
-  /* Divider Line */
-  .divider {
-    border: 0;
-    height: 1px;
-    background: #e5e7eb;
-    margin: 2rem 0;
-  }
-
-  .cta-section {
-    background-color: var(--color-bg-light);
-    padding: 4rem 20px;
-    text-align: center;
-  }
-
-  .btn-cta {
-    background-color: var(--color-secondary);
-    color: white;
-    padding: 12px 30px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
-    margin-top: 1rem;
-  }
-
-  .btn-cta:hover { background-color: #e7904e; }
 
   @media (max-width: 768px) {
     .service-row, .reverse {
       flex-direction: column;
-      gap: 2rem;
+      gap: 1.5rem;
       text-align: center;
+      padding: 2rem 0;
     }
-    .icon-header { justify-content: center; }
-    .benefits-list li { justify-content: center; }
+    .icon-header {
+      justify-content: center;
+    }
+    .benefits-list li {
+      justify-content: center;
+    }
+    .service-nav {
+      top: 50px;
+    }
   }
 </style>

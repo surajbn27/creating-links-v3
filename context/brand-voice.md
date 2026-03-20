@@ -1,0 +1,1 @@
+the tone should be friendly and caring. we want to show that we care for long term resolutions and enable the parents.

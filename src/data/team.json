@@ -1,34 +1,20 @@
 [
   {
-    "name": "Founder Name 1",
-    "role": "Co-Founder & Senior Speech Therapist",
-    "qualifications": "MASLP, Certified AVT",
-    "bio": "With over 15 years of experience, I specialize in early intervention and parent coaching.",
-    "image": "https://placehold.co/400x400/267c88/white?text=Founder+1",
-    "is_founder": true
+    "name": "Dr. Bhuvanesh R",
+    "role": "Co-Founder & Head Occupational Therapist",
+    "qualifications": "Masters in Occupational Therapy",
+    "bio": "Dr. Bhuvanesh leads the clinical team at Creating Links with deep expertise in occupational therapy, sensory integration, and child development. He is passionate about creating individualized therapy plans that empower children towards independence.",
+    "image": "https://placehold.co/400x450/267c88/white?text=Dr.+Bhuvanesh+R",
+    "is_founder": true,
+    "is_featured": true
   },
   {
-    "name": "Founder Name 2",
-    "role": "Co-Founder & Senior Occupational Therapist",
-    "qualifications": "BOT, SI Certified",
-    "bio": "Dedicated to helping children achieve independence through sensory integration and play.",
-    "image": "https://placehold.co/400x400/267c88/white?text=Founder+2",
-    "is_founder": true
-  },
-  {
-    "name": "New Hire Name",
-    "role": "Junior Special Educator",
-    "qualifications": "B.Ed (Special Education)",
-    "bio": "Passionate about creating individualized learning plans for school readiness.",
-    "image": "https://placehold.co/400x400/f4a261/white?text=Therapist",
-    "is_founder": false
-  },
-  {
-    "name": "Jane Doe",
-    "role": "Junior Special Educator",
-    "qualifications": "MPhil",
-    "bio": "Passionate about creating individualized learning plans for school readiness.",
-    "image": "https://placehold.co/400x400/f4a261/white?text=Therapist",
-    "is_founder": false
+    "name": "Shweta S",
+    "role": "Co-Founder & Operations Head",
+    "qualifications": "MBA",
+    "bio": "Shweta brings her management expertise to ensure that every family at Creating Links receives seamless, compassionate care. She oversees operations, parent engagement, and the center's strategic growth.",
+    "image": "https://placehold.co/400x450/f4a261/white?text=Shweta+S",
+    "is_founder": true,
+    "is_featured": false
   }
 ]

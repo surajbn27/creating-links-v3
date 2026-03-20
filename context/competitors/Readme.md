@@ -1,0 +1,1 @@
+This folder contains competitors info and websites or brochure for comparison and ideas

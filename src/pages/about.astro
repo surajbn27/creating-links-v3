@@ -1,161 +1,235 @@
 ---
-/* src/pages/about.astro */
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout>
+<Layout title="About Us — Creating Links" description="Learn about Creating Links, a child therapy and development centre in Bengaluru dedicated to empowering children and families.">
+
   <section class="page-header">
     <div class="container">
       <h1>About Creating Links</h1>
-      <p>Dedicated to supporting families and empowering children.</p>
+      <p>A way to redesign your life — dedicated to empowering children and supporting families.</p>
     </div>
   </section>
 
-  <section class="section story">
-    <div class="container grid">
-
+  <!-- Mission -->
+  <section class="section">
+    <div class="about-container grid">
       <div class="content">
         <h2>Our Mission</h2>
         <p>
-          At Creating Links, we believe that every child has a unique potential waiting to be unlocked.
-          Founded by [Founder Name], our clinic was built on the principle that therapy should be
-          holistic, family-centered, and compassionate.
+          At Creating Links, we believe that every child possesses a unique set of strengths
+          that deserve to be nurtured through specialized, intensive intervention. Our mission
+          is to bridge the gap between home and the structured school environment by focusing
+          on the holistic needs of every child.
         </p>
         <p>
-          We don't just treat "symptoms"; we build relationships. Our multidisciplinary team works
-          together to create personalized strategies that help your child thrive at home, at school,
-          and in the community.
+          We are more than just a clinic — we are a multidisciplinary team of expert occupational
+          therapists, speech-language pathologists, behavior intervention specialists, and special
+          educators dedicated to your child's growth.
         </p>
+      </div>
+      <div class="image-wrapper">
+        <img src="https://placehold.co/550x400/267c88/white?text=Our+Clinic" alt="Creating Links Clinic" />
+      </div>
+    </div>
+  </section>
 
-        <h3>Why Choose Us?</h3>
+  <!-- Philosophy -->
+  <section class="section alt-bg">
+    <div class="about-container">
+      <div class="philosophy-grid">
+        <div class="philosophy-card">
+          <span class="card-icon">🌱</span>
+          <h3>Individualized Growth</h3>
+          <p>
+            We use a comprehensive initial assessment to create a personalized Individualized
+            Education Plan (IEP) tailored to your child's baseline in communication and
+            social-emotional regulation.
+          </p>
+        </div>
+        <div class="philosophy-card">
+          <span class="card-icon">📖</span>
+          <h3>"Learning to Learn" Philosophy</h3>
+          <p>
+            Our primary goal is to establish the behaviors necessary for a child to succeed
+            in any educational setting through a supportive, data-driven approach.
+          </p>
+        </div>
+        <div class="philosophy-card">
+          <span class="card-icon">🚀</span>
+          <h3>Pathways to Independence</h3>
+          <p>
+            From building foundational imitation skills to mastering personal safety and
+            academic reasoning — we prepare children for full integration into mainstream
+            school settings.
+          </p>
+        </div>
+        <div class="philosophy-card">
+          <span class="card-icon">❤️</span>
+          <h3>Functional Life Skills</h3>
+          <p>
+            We prioritize real-world independence by teaching self-care routines, emotional
+            regulation tools, and visual schedules that empower children for life.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="section">
+    <div class="about-container grid reverse">
+      <div class="content">
+        <h2>Why Choose Creating Links?</h2>
         <ul class="check-list">
-          <li>✅ Experienced, certified therapists</li>
-          <li>✅ Individualized Education Plans (IEP)</li>
-          <li>✅ Parent training and support groups</li>
-          <li>✅ Safe, sensory-friendly environment</li>
+          <li>Experienced, certified therapists led by Dr. Bhuvanesh R</li>
+          <li>Individualized Education Plans (IEP) for every child</li>
+          <li>Data-driven progress tracking with evaluations every 3 months</li>
+          <li>Parent training, coaching, and support groups</li>
+          <li>Safe, sensory-friendly environment</li>
+          <li>Small 1:3 / 1:2 teaching ratio for personalized attention</li>
+          <li>Evidence-based communication tools including PECs and AAC</li>
         </ul>
       </div>
-
       <div class="image-wrapper">
-        <img src="https://placehold.co/600x600/267c88/white?text=Our+Clinic+Team" alt="Our Team" />
+        <img src="https://placehold.co/550x400/f4a261/white?text=Why+Choose+Us" alt="Our caring approach" />
       </div>
-
     </div>
   </section>
 
+  <!-- CTA -->
   <section class="cta-strip">
     <div class="container">
-      <h2>Ready to start your journey?</h2>
-      <a href="/contact" class="btn-white">Contact Us Today</a>
+      <h2>Ready to start your child's journey?</h2>
+      <p>We invite you to join our community, where we don't just teach — we create links that allow your child to soar.</p>
+      <a href="/contact" class="btn btn-white">Contact Us Today</a>
     </div>
   </section>
+
 </Layout>
 
 <style>
-  /* Page Header Styles */
-  .page-header {
-    background-color: var(--color-primary); /* Teal Background */
-    color: white;
-    padding: 4rem 20px;
-    text-align: center;
-  }
-
-  .page-header h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .page-header p {
-    font-size: 1.25rem;
-    opacity: 0.9;
-  }
-
-  /* General Section Styles */
-  .section {
-    padding: 5rem 20px;
-  }
-
-  .container {
-    max-width: 1000px; /* Slightly narrower for reading text */
+  .about-container {
+    max-width: 1080px;
     margin: 0 auto;
+    padding: 0 1.25rem;
   }
 
-  /* Grid Layout for Story */
+  .alt-bg {
+    background: var(--color-bg-light);
+  }
+
   .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 3rem;
     align-items: center;
+  }
+
+  .reverse .content {
+    order: 1;
+  }
+  .reverse .image-wrapper {
+    order: 0;
   }
 
   h2 {
     color: var(--color-primary);
     font-size: 2rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
   }
 
   p {
     line-height: 1.7;
-    margin-bottom: 1.5rem;
-    color: #4b5563;
-    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+    color: var(--color-text-body);
+    font-size: 1.05rem;
   }
 
   .image-wrapper img {
     width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
   }
 
-  /* Checklist Styles */
+  /* Philosophy Cards */
+  .philosophy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .philosophy-card {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid #f3f4f6;
+    transition: transform 0.2s;
+  }
+  .philosophy-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .card-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .philosophy-card h3 {
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .philosophy-card p {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+  }
+
+  /* Check List */
   .check-list {
     list-style: none;
     padding: 0;
-    margin-top: 1rem;
+    margin: 0;
   }
 
   .check-list li {
-    margin-bottom: 0.8rem;
-    font-size: 1.1rem;
+    padding: 0.6rem 0;
+    font-size: 1.05rem;
     color: var(--color-text-main);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
   }
 
-  /* CTA Strip (Orange/Accent) */
-  .cta-strip {
-    background-color: var(--color-secondary); /* Orange */
-    padding: 3rem 20px;
-    text-align: center;
-    color: white;
+  .check-list li::before {
+    content: "✓";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 24px;
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    border-radius: 50%;
+    font-size: 0.75rem;
+    font-weight: 700;
   }
 
-  .cta-strip h2 {
-    color: white;
-    margin-bottom: 1.5rem;
-  }
-
-  .btn-white {
-    background-color: white;
-    color: var(--color-secondary);
-    padding: 12px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
-    transition: transform 0.2s;
-  }
-
-  .btn-white:hover {
-    transform: scale(1.05);
-  }
-
-  /* Mobile Responsiveness */
   @media (max-width: 768px) {
     .grid {
-      grid-template-columns: 1fr; /* Stack text and image */
+      grid-template-columns: 1fr;
+    }
+    .reverse .content { order: 0; }
+    .reverse .image-wrapper { order: -1; }
+    .philosophy-grid {
+      grid-template-columns: 1fr;
     }
     .image-wrapper {
-      order: -1; /* Show image on top on mobile */
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
   }
 </style>

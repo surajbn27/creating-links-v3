@@ -1,54 +1,122 @@
 [
   {
-    "id": "speech",
-    "title": "Speech & Language Therapy",
-    "icon": "🗣️",
-    "description": "Our speech therapy program focuses on helping children express themselves clearly and confidently. We create fun, engaging sessions to build vital communication skills.",
-    "image": "https://placehold.co/500x350/267c88/white?text=Speech+Therapy",
-    "benefits": [
-      "Articulation & Phonology (Clarity)",
-      "Receptive & Expressive Language",
-      "Fluency (Stuttering therapy)",
-      "Social Skills & Pragmatics"
-    ]
-  },
-  {
-    "id": "occupational",
+    "id": "occupational-therapy",
     "title": "Occupational Therapy (OT)",
     "icon": "🧩",
-    "description": "Occupational therapy helps children gain independence in their daily lives. We focus on fine motor skills, sensory processing, and self-care routines.",
-    "image": "https://placehold.co/500x350/f4a261/white?text=Occupational+Therapy",
+    "shortDescription": "Helping children gain independence in daily life through fine motor skills, sensory processing, and self-care routines.",
+    "description": "Our occupational therapy program, led by Dr. Bhuvanesh R, focuses on helping children gain independence in their daily lives. We work on fine motor skills, sensory processing, hand-eye coordination, and self-care routines through engaging, play-based sessions tailored to each child's needs.",
+    "image": "https://placehold.co/500x350/267c88/white?text=Occupational+Therapy",
     "benefits": [
-      "Fine Motor Skills (Writing, Gripping)",
+      "Fine Motor Skills (Writing, Gripping, Cutting)",
       "Sensory Integration Therapy",
       "Hand-Eye Coordination",
-      "Activities of Daily Living (ADLs)"
+      "Activities of Daily Living (ADLs)",
+      "Self-Care & Independence Training"
     ]
   },
   {
-    "id": "special-ed",
-    "title": "Special Education",
-    "icon": "📚",
-    "description": "Our special educators work one-on-one with children to bridge learning gaps using individualized strategies that move beyond standard classroom methods.",
-    "image": "https://placehold.co/500x350/267c88/white?text=Special+Education",
+    "id": "speech-therapy",
+    "title": "Speech & Language Therapy",
+    "icon": "🗣️",
+    "shortDescription": "Building communication skills, articulation, and language comprehension through fun, engaging sessions.",
+    "description": "Our speech therapy program focuses on helping children express themselves clearly and confidently. We create fun, engaging sessions to build vital communication skills including articulation, language comprehension, fluency, and social communication.",
+    "image": "https://placehold.co/500x350/f4a261/white?text=Speech+Therapy",
     "benefits": [
-      "Individualized Education Plans (IEP)",
-      "Remedial Teaching for Learning Disabilities",
-      "Cognitive Skill Development",
-      "Academic Support"
+      "Articulation & Phonology (Speech Clarity)",
+      "Receptive & Expressive Language",
+      "Fluency (Stuttering Therapy)",
+      "Social Skills & Pragmatics",
+      "Functional Communication Training (FCT)"
     ]
   },
   {
     "id": "school-readiness",
     "title": "School Readiness Program",
     "icon": "🎒",
-    "description": "A specialized program designed to prepare young children for the transition to formal schooling, focusing on social, emotional, and foundational academic skills.",
-    "image": "https://placehold.co/500x350/e76f51/white?text=School+Readiness",
+    "shortDescription": "Preparing children for mainstream school through structured learning, social skills, and classroom readiness.",
+    "description": "Our signature School Readiness Program bridges the gap between home and the structured school environment. We focus on the holistic needs of every child — from imitation and observational learning to pre-academic skills and emotional regulation — across three progressive levels.",
+    "image": "https://placehold.co/500x350/267c88/white?text=School+Readiness",
     "benefits": [
-      "Classroom Behavior & Routine",
+      "Classroom Behavior & Routine Training",
       "Social Interaction with Peers",
-      "Pre-writing & Pre-reading Skills",
-      "Following Group Instructions"
+      "Pre-Writing & Pre-Reading Skills",
+      "Cognitive & Pre-Academic Skills",
+      "Emotional Regulation & Self-Care"
+    ]
+  },
+  {
+    "id": "behavioral-therapy",
+    "title": "Behavioral Therapy",
+    "icon": "🧠",
+    "shortDescription": "Evidence-based strategies to manage challenging behaviors and build positive habits for children.",
+    "description": "Our behavioral therapy uses evidence-based approaches to help children manage challenging behaviors and develop positive habits. We work closely with parents to create consistent strategies that can be applied at home, school, and in the community.",
+    "image": "https://placehold.co/500x350/e76f51/white?text=Behavioral+Therapy",
+    "benefits": [
+      "Applied Behavior Analysis (ABA) Techniques",
+      "Positive Behavior Support",
+      "Social Skills Training",
+      "Parent Coaching & Home Strategies",
+      "Emotional Regulation Skills"
+    ]
+  },
+  {
+    "id": "special-education",
+    "title": "Special Education",
+    "icon": "📚",
+    "shortDescription": "Individualized learning strategies that bridge learning gaps and build academic confidence.",
+    "description": "Our special educators work one-on-one with children to bridge learning gaps using individualized strategies that move beyond standard classroom methods. Each child receives a personalized Individualized Education Plan (IEP) designed to support their unique learning profile.",
+    "image": "https://placehold.co/500x350/267c88/white?text=Special+Education",
+    "benefits": [
+      "Individualized Education Plans (IEP)",
+      "Remedial Teaching for Learning Disabilities",
+      "Cognitive Skill Development",
+      "Academic Support & Tutoring",
+      "NIOS Curriculum Alignment"
+    ]
+  },
+  {
+    "id": "physiotherapy",
+    "title": "Physiotherapy",
+    "icon": "🏃",
+    "shortDescription": "Improving movement, strength, balance, and coordination through targeted physical therapy.",
+    "description": "Our physiotherapy services focus on improving children's gross motor skills, strength, balance, and overall physical coordination. Through structured exercises and play-based activities, we help children achieve physical milestones and improve their confidence in movement.",
+    "image": "https://placehold.co/500x350/f4a261/white?text=Physiotherapy",
+    "benefits": [
+      "Gross Motor Skill Development",
+      "Strength & Balance Training",
+      "Postural Correction",
+      "Coordination & Movement Planning",
+      "Gait Training & Mobility Support"
+    ]
+  },
+  {
+    "id": "sensory-integration",
+    "title": "Sensory Integration",
+    "icon": "✨",
+    "shortDescription": "Helping children process and respond to sensory input for better focus, calm, and participation.",
+    "description": "Sensory integration therapy helps children who have difficulty processing sensory information from their environment. Through structured sensory activities, we help children improve their ability to focus, stay calm, and participate meaningfully in everyday activities.",
+    "image": "https://placehold.co/500x350/267c88/white?text=Sensory+Integration",
+    "benefits": [
+      "Sensory Processing Assessment",
+      "Tactile & Vestibular Activities",
+      "Visual & Auditory Processing Support",
+      "Self-Regulation Strategies",
+      "Sensory Diet Planning"
+    ]
+  },
+  {
+    "id": "early-intervention",
+    "title": "Early Intervention",
+    "icon": "🌱",
+    "shortDescription": "Targeted support for infants and toddlers to address developmental delays as early as possible.",
+    "description": "Our early intervention program provides targeted support for infants and toddlers (0-3 years) showing developmental delays. Early identification and intervention can significantly improve outcomes, and we work hand-in-hand with parents to support their child's growth during these critical early years.",
+    "image": "https://placehold.co/500x350/e76f51/white?text=Early+Intervention",
+    "benefits": [
+      "Developmental Milestone Screening",
+      "Parent Coaching & Home Programs",
+      "Play-Based Developmental Activities",
+      "Feeding & Oral Motor Support",
+      "Multi-Disciplinary Team Assessment"
     ]
   }
 ]

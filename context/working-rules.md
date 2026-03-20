@@ -1,0 +1,1 @@
+Always show me a plan before making changes. Never delete files without explicit confirmation.

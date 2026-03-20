@@ -1,55 +1,96 @@
 ---
-/* src/components/Navbar.astro */
+/* Navbar v2.0 — with mobile hamburger menu */
 ---
-<nav class="navbar">
-  <div class="container">
-    <a href="/" class="brand">Creating Links</a>
 
-    <ul class="nav-links">
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="/" class="brand">
+      <span class="brand-icon">🔗</span>
+      <span class="brand-text">Creating Links</span>
+    </a>
+
+    <!-- Hamburger button (mobile only) -->
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- Nav links -->
+    <ul class="nav-links" id="nav-links">
       <li><a href="/">Home</a></li>
       <li><a href="/about">About Us</a></li>
       <li><a href="/services">Services</a></li>
-      <li><a href="/team">Team</a></li>
-      <li><a href="/contact" class="btn-contact">Contact</a></li>
+      <li><a href="/team">Our Team</a></li>
+      <li><a href="/contact" class="btn-contact">Contact Us</a></li>
     </ul>
   </div>
 </nav>
 
+<!-- Mobile menu toggle script -->
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger?.addEventListener('click', () => {
+    const isOpen = navLinks?.classList.toggle('open');
+    hamburger.classList.toggle('active');
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  // Close menu when a link is clicked
+  navLinks?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      hamburger?.classList.remove('active');
+      hamburger?.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+
 <style>
-  /* The Teal Bar */
   .navbar {
     background-color: white;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    padding: 1rem 0;
-    position: sticky; /* Keeps it at the top when scrolling */
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    padding: 0.75rem 0;
+    position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
   }
 
-  .container {
-    max-width: 1200px;
+  .nav-container {
+    max-width: 1140px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 1.25rem;
   }
 
-  /* Brand Style */
+  /* Brand */
   .brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--color-primary); /* TEAL */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     text-decoration: none;
+  }
+  .brand-icon {
+    font-size: 1.5rem;
+  }
+  .brand-text {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--color-primary);
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
   }
 
-  /* Link Styles */
+  /* Links */
   .nav-links {
     list-style: none;
     display: flex;
-    gap: 30px;
+    align-items: center;
+    gap: 2rem;
     margin: 0;
     padding: 0;
   }
@@ -58,62 +99,96 @@
     text-decoration: none;
     color: var(--color-text-main);
     font-weight: 500;
+    font-size: 0.95rem;
     transition: color 0.2s;
   }
 
   .nav-links a:hover {
-    color: var(--color-primary); /* Turns Teal on hover */
+    color: var(--color-primary);
   }
 
-  /* Special "Contact" Button Style */
+  /* Contact button */
   .btn-contact {
-    background-color: var(--color-primary);
+    background-color: var(--color-primary) !important;
     color: white !important;
-    padding: 8px 20px;
-    border-radius: 5px;
+    padding: 0.5rem 1.25rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600 !important;
+    transition: background-color 0.2s;
+  }
+  .btn-contact:hover {
+    background-color: var(--color-secondary) !important;
   }
 
-  .btn-contact:hover {
-    background-color: var(--color-secondary); /* Turns Orange on hover */
-    color: white;
+  /* Hamburger — hidden on desktop */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 1001;
   }
-  /* =========================================
-     MOBILE SCROLL FIX (v1.1)
-     ========================================= */
+  .bar {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background-color: var(--color-text-main);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* Hamburger active state (X) */
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* ---- Mobile ---- */
   @media (max-width: 768px) {
-    .container {
-      flex-direction: column; /* Stack Logo on top, Menu below */
-      align-items: flex-start; /* Align everything to the left */
-      gap: 1rem; /* Space between Logo and Menu */
-      padding-bottom: 0.5rem; /* Little padding at bottom */
+    .hamburger {
+      display: flex;
     }
 
     .nav-links {
-      width: 100%; /* Force menu to take full width */
-      justify-content: flex-start; /* Start items from the left */
-      overflow-x: auto; /* ENABLE SCROLLING */
-      padding-bottom: 10px; /* Room for touch interaction */
-      gap: 20px; /* Slightly tighter gap on mobile */
-
-      /* Smooth scrolling for iOS */
-      -webkit-overflow-scrolling: touch;
-
-      /* Hide the ugly scrollbar (but keep functionality) */
-      scrollbar-width: none;  /* Firefox */
-      -ms-overflow-style: none;  /* IE 10+ */
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 1.5rem 1.25rem;
+      gap: 0;
     }
 
-    .nav-links::-webkit-scrollbar {
-      display: none; /* Chrome/Safari */
+    .nav-links.open {
+      display: flex;
     }
 
     .nav-links li {
-      flex-shrink: 0; /* Stop links from squishing! */
+      width: 100%;
     }
 
-    /* Optional: Make the button look like a link on mobile to fit in better */
+    .nav-links a {
+      display: block;
+      padding: 0.75rem 0;
+      font-size: 1.05rem;
+      border-bottom: 1px solid #f3f4f6;
+    }
+
     .btn-contact {
-      white-space: nowrap; /* Prevent text wrapping */
+      text-align: center;
+      margin-top: 0.5rem;
+      border-radius: var(--radius-sm) !important;
     }
   }
 </style>

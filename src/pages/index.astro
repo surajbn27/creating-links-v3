@@ -2,12 +2,132 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import ServicesSection from '../components/ServicesSection.astro';
-import Reviews from '../components/Reviews.astro'; // <--- 1. Import
+import Reviews from '../components/Reviews.astro';
 ---
 
 <Layout>
-	<main>
-		<Hero />
-		<ServicesSection />
-        <Reviews /> </main>
+  <Hero />
+  <ServicesSection />
+
+  <!-- School Readiness Highlight -->
+  <section class="highlight-section">
+    <div class="highlight-container">
+      <div class="highlight-content">
+        <span class="highlight-badge">Signature Program</span>
+        <h2>School Readiness Program</h2>
+        <p>
+          Our structured program prepares children for mainstream schooling through three progressive
+          levels — from building foundational imitation skills ("Wings to Fly") to achieving full
+          academic and social readiness ("Sky's the Limit").
+        </p>
+        <ul class="highlight-features">
+          <li>1:3 / 1:2 teaching ratio for personalized attention</li>
+          <li>Data-driven monthly progress tracking</li>
+          <li>CCTV-monitored safe environment</li>
+          <li>Parent observation & regular feedback sessions</li>
+        </ul>
+        <a href="/services#school-readiness" class="btn btn-primary">Learn More</a>
+      </div>
+      <div class="highlight-image">
+        <img src="https://placehold.co/520x380/267c88/white?text=School+Readiness" alt="School Readiness Program" />
+      </div>
+    </div>
+  </section>
+
+  <Reviews />
+
+  <!-- CTA -->
+  <section class="cta-strip">
+    <div class="container">
+      <h2>Take the First Step Today</h2>
+      <p>Book a free initial consultation and let our team understand your child's unique needs.</p>
+      <a href="/contact" class="btn btn-white">Book an Assessment</a>
+    </div>
+  </section>
 </Layout>
+
+<style>
+  /* School Readiness Highlight */
+  .highlight-section {
+    padding: 5rem 1.25rem;
+    background: var(--color-bg-light);
+  }
+
+  .highlight-container {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .highlight-badge {
+    display: inline-block;
+    background: var(--color-secondary);
+    color: white;
+    padding: 0.3rem 0.9rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .highlight-content h2 {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .highlight-content p {
+    color: var(--color-text-body);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+  }
+
+  .highlight-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+  }
+
+  .highlight-features li {
+    padding: 0.4rem 0;
+    color: var(--color-text-main);
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .highlight-features li::before {
+    content: "✓";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    border-radius: 50%;
+    font-size: 0.7rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .highlight-image img {
+    width: 100%;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+  }
+
+  @media (max-width: 768px) {
+    .highlight-container {
+      grid-template-columns: 1fr;
+    }
+    .highlight-image {
+      order: -1;
+    }
+  }
+</style>
