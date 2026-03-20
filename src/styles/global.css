@@ -28,6 +28,9 @@
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
   --font-heading: 'Inter', system-ui, -apple-system, sans-serif;
 
+  /* Layout */
+  --navbar-height: 58px;
+
   /* Borders & Shadows */
   --radius-sm: 6px;
   --radius-md: 12px;
@@ -62,7 +65,7 @@ body {
   min-height: 100vh;
 }
 
-body > :global(main) {
+main {
   flex: 1;
 }
 
@@ -151,12 +154,12 @@ p {
   text-align: center;
 }
 .page-header h1 {
-  color: white;
+  color: white !important;
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
 }
 .page-header p {
-  color: rgba(255,255,255,0.9);
+  color: rgba(255,255,255,0.9) !important;
   font-size: 1.15rem;
   max-width: 600px;
   margin: 0 auto;
@@ -189,12 +192,12 @@ p {
   color: white;
 }
 .cta-strip h2 {
-  color: white;
+  color: white !important;
   font-size: 2rem;
   margin-bottom: 1rem;
 }
 .cta-strip p {
-  color: rgba(255,255,255,0.9);
+  color: rgba(255,255,255,0.9) !important;
   margin-bottom: 1.5rem;
   font-size: 1.1rem;
 }
