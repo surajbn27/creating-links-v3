@@ -1,31 +1,53 @@
 ---
+// =============================================================
+// Reviews.astro — Parent testimonials section
+//
+// Reads all reviews from reviews.json and renders them in a
+// responsive grid of cards. Each card shows:
+//   - Star rating
+//   - Review text (in quotes)
+//   - Parent name, child age, and service tag
+// =============================================================
+
 import reviewsData from '../data/reviews.json';
 ---
 
 <section class="reviews-section">
   <div class="reviews-container">
+
+    <!-- Section heading -->
     <div class="section-header">
       <h2>What Parents Say</h2>
       <p>Real stories from families we've supported on their journey.</p>
     </div>
 
+    <!-- Responsive grid of review cards -->
     <div class="reviews-grid">
       {reviewsData.map((review) => (
         <div class="review-card">
+
+          <!-- Star rating (repeated emoji based on rating value) -->
           <div class="stars">{"⭐".repeat(review.rating)}</div>
+
+          <!-- Review body text -->
           <p class="review-text">"{review.review}"</p>
+
+          <!-- Reviewer identity -->
           <div class="reviewer-info">
             <strong>{review.parent_name}</strong>
             <span class="child-info">Parent of child ({review.child_age})</span>
             <span class="service-tag">{review.service}</span>
           </div>
+
         </div>
       ))}
     </div>
+
   </div>
 </section>
 
 <style>
+  /* ---- Section wrapper ---- */
   .reviews-section {
     background: var(--color-bg-light);
     padding: 5rem 1.25rem;
@@ -36,6 +58,7 @@ import reviewsData from '../data/reviews.json';
     margin: 0 auto;
   }
 
+  /* ---- Section heading ---- */
   .section-header {
     text-align: center;
     margin-bottom: 3rem;
@@ -52,12 +75,14 @@ import reviewsData from '../data/reviews.json';
     margin: 0 auto;
   }
 
+  /* ---- Cards grid ---- */
   .reviews-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
   }
 
+  /* ---- Individual review card ---- */
   .review-card {
     background: white;
     padding: 2rem;
@@ -71,6 +96,7 @@ import reviewsData from '../data/reviews.json';
     font-size: 1.1rem;
   }
 
+  /* Italic quoted review text */
   .review-text {
     font-size: 1.05rem;
     color: var(--color-text-body);
@@ -79,12 +105,14 @@ import reviewsData from '../data/reviews.json';
     line-height: 1.6;
   }
 
+  /* Parent name (bold, full-width block) */
   .reviewer-info strong {
     display: block;
     color: var(--color-text-main);
     font-size: 1rem;
   }
 
+  /* "Parent of child (age)" line */
   .child-info {
     display: block;
     font-size: 0.85rem;
@@ -92,6 +120,7 @@ import reviewsData from '../data/reviews.json';
     margin-bottom: 0.5rem;
   }
 
+  /* Coloured pill showing which service they used */
   .service-tag {
     display: inline-block;
     background: var(--color-primary-light);
@@ -102,6 +131,7 @@ import reviewsData from '../data/reviews.json';
     font-weight: 600;
   }
 
+  /* ---- Mobile: single column ---- */
   @media (max-width: 768px) {
     .reviews-grid {
       grid-template-columns: 1fr;

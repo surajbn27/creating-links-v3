@@ -1,9 +1,25 @@
 ---
+// =============================================================
+// contact.astro — Contact Us page
+//
+// Layout: two-column grid
+//   Left  — enquiry form (Web3Forms)
+//   Right — clinic info card + Google Maps embed
+//
+// Form submissions go to Web3Forms (no backend needed).
+// Access key is specific to the Creating Links account.
+// The botcheck hidden checkbox is a spam honeypot field.
+// =============================================================
+
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Contact Us — Creating Links" description="Get in touch with Creating Links. Book an assessment, ask a question, or visit our clinic in HRBR Layout, Bengaluru.">
+<Layout
+  title="Contact Us — Creating Links"
+  description="Get in touch with Creating Links. Book an assessment, ask a question, or visit our clinic in HRBR Layout, Bengaluru."
+>
 
+  <!-- Page header banner -->
   <section class="page-header">
     <div class="container">
       <h1>Contact Us</h1>
@@ -11,66 +27,109 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <!-- Main content: form + info sidebar -->
   <section class="contact-section">
     <div class="contact-container grid">
 
-      <!-- Form -->
+      <!-- ============ LEFT: Enquiry Form ============ -->
       <div class="form-wrapper">
         <h2>Send us a Message</h2>
-        <p class="form-intro">Fill out the form below to schedule an assessment or ask a question. We typically respond within 24 hours.</p>
+        <p class="form-intro">
+          Fill out the form below to schedule an assessment or ask a question.
+          We typically respond within 24 hours.
+        </p>
 
+        <!--
+          Web3Forms: form submissions are sent to creatinglinks22@gmail.com
+          Access key: 35fbd206-d7e8-49fe-8814-07e5ecdb2337
+          Docs: https://web3forms.com
+        -->
         <form
           action="https://api.web3forms.com/submit"
           method="POST"
           class="contact-form"
         >
+          <!-- Web3Forms authentication key (required) -->
           <input type="hidden" name="access_key" value="35fbd206-d7e8-49fe-8814-07e5ecdb2337" />
-          <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
 
+          <!-- Spam honeypot: bots fill this in, humans don't see it -->
+          <input type="checkbox" name="botcheck" style="display: none;" />
+
+          <!-- Parent name -->
           <div class="form-group">
             <label for="name">Parent's Name</label>
-            <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your full name"
+              required
+            />
           </div>
 
+          <!-- Email -->
           <div class="form-group">
             <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="email@example.com" required />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="email@example.com"
+              required
+            />
           </div>
 
+          <!-- Phone -->
           <div class="form-group">
             <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required />
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="+91 98765 43210"
+              required
+            />
           </div>
 
+          <!-- Service selector — matches services in services.json -->
           <div class="form-group">
             <label for="service">Service of Interest</label>
             <select id="service" name="service">
               <option value="">Select a service (optional)</option>
+              <option value="Early Intervention">Early Intervention</option>
               <option value="Occupational Therapy">Occupational Therapy</option>
-              <option value="Speech Therapy">Speech & Language Therapy</option>
-              <option value="School Readiness">School Readiness Program</option>
+              <option value="Sensory Integration">Sensory Integration</option>
               <option value="Behavioral Therapy">Behavioral Therapy</option>
+              <option value="Speech Therapy">Speech & Language Therapy</option>
+              <option value="Group Therapy">Group Therapy</option>
+              <option value="School Readiness">School Readiness Program</option>
               <option value="Special Education">Special Education</option>
               <option value="Physiotherapy">Physiotherapy</option>
-              <option value="Sensory Integration">Sensory Integration</option>
-              <option value="Early Intervention">Early Intervention</option>
-              <option value="Group Therapy">Group Therapy</option>
               <option value="Vocational Training">Vocational Training</option>
               <option value="Not Sure">Not sure — need guidance</option>
             </select>
           </div>
 
+          <!-- Free-text message -->
           <div class="form-group">
             <label for="message">How can we help?</label>
-            <textarea id="message" name="message" rows="4" placeholder="Tell us a bit about your child's needs..." required></textarea>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              placeholder="Tell us a bit about your child's needs..."
+              required
+            ></textarea>
           </div>
 
           <button type="submit" class="btn btn-primary btn-full">Send Message</button>
         </form>
       </div>
 
-      <!-- Info Sidebar -->
+      <!-- ============ RIGHT: Clinic Info + Map ============ -->
       <div class="info-wrapper">
+
+        <!-- Contact details card -->
         <div class="info-card">
           <h3>Clinic Information</h3>
 
@@ -78,7 +137,7 @@ import Layout from '../layouts/Layout.astro';
             <span class="info-icon">📍</span>
             <div>
               <strong>Address</strong>
-              <p>4C, 912, 4th Cross, HRBR Layout 1st Block,<br/>Kalyan Nagar, Bengaluru 560043</p>
+              <p>4C, 912, 4th Cross, HRBR Layout 1st Block,<br />Kalyan Nagar, Bengaluru 560043</p>
             </div>
           </div>
 
@@ -102,7 +161,7 @@ import Layout from '../layouts/Layout.astro';
             <span class="info-icon">⏰</span>
             <div>
               <strong>Hours</strong>
-              <p>Mon – Sat: 9:00 AM – 7:00 PM<br/>Sunday: Closed</p>
+              <p>Mon – Sat: 9:00 AM – 7:00 PM<br />Sunday: Closed</p>
             </div>
           </div>
 
@@ -110,23 +169,32 @@ import Layout from '../layouts/Layout.astro';
             <span class="info-icon">💬</span>
             <div>
               <strong>WhatsApp</strong>
-              <p><a href="https://wa.me/918105272466?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20therapy%20services." target="_blank">Chat with us on WhatsApp</a></p>
+              <p>
+                <a
+                  href="https://wa.me/918105272466?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20therapy%20services."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Chat with us on WhatsApp
+                </a>
+              </p>
             </div>
           </div>
         </div>
 
-        <!-- Map -->
+        <!-- Google Maps embed (verified Creating Links pin) -->
         <div class="map-container">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7774.597676664828!2d77.65055600000001!3d13.016632!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae17fae7ddd857%3A0xfade801edcfd17f3!2sCreating%20Links!5e0!3m2!1sen!2sus!4v1774095665755!5m2!1sen!2sus"
             width="100%"
             height="280"
-            style="border:0;"
+            style="border: 0;"
             allowfullscreen=""
             loading="lazy"
-            title="Creating Links Clinic Location">
-          </iframe>
+            title="Creating Links Clinic Location"
+          ></iframe>
         </div>
+
       </div>
 
     </div>
@@ -135,6 +203,7 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
+  /* ---- Page layout ---- */
   .contact-section {
     padding: 4rem 1.25rem;
     background: white;
@@ -145,13 +214,14 @@ import Layout from '../layouts/Layout.astro';
     margin: 0 auto;
   }
 
+  /* Two-column grid: form (wider) | info sidebar */
   .grid {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
     gap: 3rem;
   }
 
-  /* Form Styles */
+  /* ---- Form styles ---- */
   .form-wrapper h2 {
     color: var(--color-primary);
     margin-bottom: 0.5rem;
@@ -174,23 +244,30 @@ import Layout from '../layouts/Layout.astro';
     font-size: 0.95rem;
   }
 
-  input, textarea, select {
+  /* Shared styles for all form inputs */
+  input,
+  textarea,
+  select {
     width: 100%;
     padding: 0.75rem;
     border: 1px solid #e5e7eb;
     border-radius: var(--radius-sm);
     font-size: 1rem;
-    font-family: inherit;
+    font-family: inherit;     /* match Inter font, not browser default */
     transition: border-color 0.2s;
     background: white;
   }
 
-  input:focus, textarea:focus, select:focus {
+  /* Teal focus ring on inputs */
+  input:focus,
+  textarea:focus,
+  select:focus {
     outline: none;
     border-color: var(--color-primary);
     box-shadow: 0 0 0 3px rgba(38, 124, 136, 0.1);
   }
 
+  /* Full-width submit button */
   .btn-full {
     width: 100%;
     padding: 0.85rem;
@@ -198,7 +275,7 @@ import Layout from '../layouts/Layout.astro';
     margin-top: 0.5rem;
   }
 
-  /* Info Card */
+  /* ---- Info card (right sidebar) ---- */
   .info-card {
     background: var(--color-bg-light);
     padding: 2rem;
@@ -206,6 +283,7 @@ import Layout from '../layouts/Layout.astro';
     margin-bottom: 1.5rem;
   }
 
+  /* Card heading with underline separator */
   .info-card h3 {
     color: var(--color-primary);
     margin-bottom: 1.5rem;
@@ -214,12 +292,14 @@ import Layout from '../layouts/Layout.astro';
     font-size: 1.25rem;
   }
 
+  /* Each info row: icon + label + value */
   .info-item {
     display: flex;
     gap: 0.75rem;
     margin-bottom: 1.25rem;
   }
 
+  /* Icon locked to top-left of its row */
   .info-icon {
     font-size: 1.25rem;
     flex-shrink: 0;
@@ -244,16 +324,18 @@ import Layout from '../layouts/Layout.astro';
     color: var(--color-primary);
     text-decoration: none;
   }
+
   .info-item a:hover {
     text-decoration: underline;
   }
 
-  /* Map */
+  /* ---- Google Maps embed ---- */
   .map-container iframe {
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-sm);
   }
 
+  /* ---- Mobile: stack form above info card ---- */
   @media (max-width: 768px) {
     .grid {
       grid-template-columns: 1fr;

@@ -1,21 +1,42 @@
 ---
-/* Hero v2.0 — Creating Links homepage hero */
+// =============================================================
+// Hero.astro — Homepage hero section
+//
+// Layout: two-column grid (text left, image right)
+// Contains:
+//   - Trust badge
+//   - Headline + subtext
+//   - Two CTA buttons (Book Assessment / Our Services)
+//   - Three trust indicators (Certified, Individualized, Family-Centered)
+// =============================================================
 ---
 
 <section class="hero">
   <div class="hero-container">
+
+    <!-- Left column: text content -->
     <div class="hero-content">
+
       <span class="hero-badge">Bengaluru's Trusted Child Development Centre</span>
-      <h1>Empowering Every Child's <span class="highlight">Unique Potential</span></h1>
+
+      <h1>
+        Empowering Every Child's
+        <span class="highlight">Unique Potential</span>
+      </h1>
+
       <p>
         At Creating Links, we provide holistic, evidence-based therapy — from occupational
         therapy and speech therapy to school readiness programs — tailored to your child's
         developmental journey. We don't just treat; we build lasting connections.
       </p>
+
+      <!-- CTA buttons -->
       <div class="hero-buttons">
         <a href="/contact" class="btn btn-primary">Book an Assessment</a>
         <a href="/services" class="btn btn-outline">Our Services</a>
       </div>
+
+      <!-- Three quick trust signals below the buttons -->
       <div class="hero-trust">
         <div class="trust-item">
           <span class="trust-icon">👨‍⚕️</span>
@@ -30,20 +51,28 @@
           <span>Family-Centered Care</span>
         </div>
       </div>
+
     </div>
 
+    <!-- Right column: hero image -->
     <div class="hero-image">
-      <img src="https://placehold.co/580x420/267c88/white?text=Therapy+Session" alt="A therapy session at Creating Links" />
+      <img
+        src="https://placehold.co/580x420/267c88/white?text=Therapy+Session"
+        alt="A therapy session at Creating Links"
+      />
     </div>
+
   </div>
 </section>
 
 <style>
+  /* ---- Hero wrapper ---- */
   .hero {
     padding: 4rem 1.25rem 5rem;
     background: linear-gradient(180deg, var(--color-bg-light) 0%, var(--color-bg-white) 100%);
   }
 
+  /* Two-column layout on desktop */
   .hero-container {
     max-width: 1140px;
     margin: 0 auto;
@@ -53,6 +82,7 @@
     align-items: center;
   }
 
+  /* ---- Badge ---- */
   .hero-badge {
     display: inline-block;
     background: var(--color-primary-light);
@@ -64,16 +94,19 @@
     margin-bottom: 1.25rem;
   }
 
+  /* ---- Headline ---- */
   .hero-content h1 {
     font-size: 2.75rem;
     line-height: 1.15;
     margin-bottom: 1.25rem;
   }
 
+  /* Teal highlight on the second line of the headline */
   .highlight {
     color: var(--color-primary);
   }
 
+  /* ---- Body text ---- */
   .hero-content p {
     font-size: 1.1rem;
     color: var(--color-text-body);
@@ -81,18 +114,20 @@
     max-width: 540px;
   }
 
+  /* ---- CTA buttons row ---- */
   .hero-buttons {
     display: flex;
     gap: 1rem;
     margin-bottom: 2.5rem;
   }
 
-  /* Trust indicators */
+  /* ---- Trust indicators ---- */
   .hero-trust {
     display: flex;
     gap: 1.5rem;
     flex-wrap: wrap;
   }
+
   .trust-item {
     display: flex;
     align-items: center;
@@ -101,38 +136,48 @@
     color: var(--color-text-muted);
     font-weight: 500;
   }
+
   .trust-icon {
     font-size: 1.1rem;
   }
 
-  /* Image */
+  /* ---- Hero image ---- */
   .hero-image img {
     width: 100%;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);
   }
 
+  /* ---- Mobile: stack columns vertically ---- */
   @media (max-width: 768px) {
     .hero {
       padding: 2.5rem 1rem 3rem;
     }
+
     .hero-container {
       grid-template-columns: 1fr;
       text-align: center;
     }
+
     .hero-content h1 {
       font-size: 2rem;
     }
+
+    /* Centre the paragraph text on mobile */
     .hero-content p {
       margin-left: auto;
       margin-right: auto;
     }
+
     .hero-buttons {
       justify-content: center;
     }
+
     .hero-trust {
       justify-content: center;
     }
+
+    /* Image appears above text on mobile */
     .hero-image {
       order: -1;
     }

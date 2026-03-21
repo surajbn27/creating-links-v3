@@ -1,15 +1,36 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import teamData from '../data/team.json';
+// =============================================================
+// team.astro — Our Team page
+//
+// Section order:
+//   1. Page header      (teal banner)
+//   2. Featured founder (Dr. Bhuvanesh — large prominent card)
+//   3. Other founders   (leadership grid — Shweta S)
+//   4. Clinical team    (grid — other staff from team.json)
+//   5. Hiring CTA       (orange strip)
+//
+// Data source: src/data/team.json
+//   is_featured: true  → shown in the large "Lead Therapist" card
+//   is_founder:  true  → shown in "Leadership Team" section
+//   everything else    → shown in "Our Clinical Team" grid
+// =============================================================
 
-const founders = teamData.filter(member => member.is_founder);
-const staff = teamData.filter(member => !member.is_founder);
-const featured = founders.find(m => m.is_featured);
-const otherFounders = founders.filter(m => !m.is_featured);
+import Layout    from '../layouts/Layout.astro';
+import teamData  from '../data/team.json';
+
+// Split team members into three groups
+const founders      = teamData.filter(member =>  member.is_founder);
+const staff         = teamData.filter(member => !member.is_founder);
+const featured      = founders.find(m =>  m.is_featured);    // Dr. Bhuvanesh
+const otherFounders = founders.filter(m => !m.is_featured);  // Shweta S
 ---
 
-<Layout title="Our Team — Creating Links" description="Meet the dedicated specialists at Creating Links — led by Dr. Bhuvanesh R, our multidisciplinary team is here for your child.">
+<Layout
+  title="Our Team — Creating Links"
+  description="Meet the dedicated specialists at Creating Links — led by Dr. Bhuvanesh R, our multidisciplinary team is here for your child."
+>
 
+  <!-- 1. Page header banner -->
   <section class="page-header">
     <div class="container">
       <h1>Meet Our Specialists</h1>
@@ -17,14 +38,18 @@ const otherFounders = founders.filter(m => !m.is_featured);
     </div>
   </section>
 
-  <!-- Featured Founder (Dr. Bhuvanesh) -->
+  <!-- 2. Featured founder: Dr. Bhuvanesh R (large card) -->
   {featured && (
     <section class="section">
       <div class="team-container">
         <div class="featured-card">
+
+          <!-- Photo (left side) -->
           <div class="featured-image">
             <img src={featured.image} alt={featured.name} />
           </div>
+
+          <!-- Bio (right side) -->
           <div class="featured-info">
             <span class="founder-badge">Lead Therapist</span>
             <h2>{featured.name}</h2>
@@ -32,12 +57,13 @@ const otherFounders = founders.filter(m => !m.is_featured);
             <span class="quals">{featured.qualifications}</span>
             <p>{featured.bio}</p>
           </div>
+
         </div>
       </div>
     </section>
   )}
 
-  <!-- Other Founders -->
+  <!-- 3. Other founders: Shweta S (leadership grid) -->
   {otherFounders.length > 0 && (
     <section class="section alt-bg">
       <div class="team-container">
@@ -61,7 +87,7 @@ const otherFounders = founders.filter(m => !m.is_featured);
     </section>
   )}
 
-  <!-- Clinical Team -->
+  <!-- 4. Clinical team (therapists, educators, etc.) -->
   {staff.length > 0 && (
     <section class="section">
       <div class="team-container">
@@ -84,7 +110,7 @@ const otherFounders = founders.filter(m => !m.is_featured);
     </section>
   )}
 
-  <!-- Hiring CTA -->
+  <!-- 5. Hiring CTA strip -->
   <section class="cta-strip">
     <div class="container">
       <h2>Join Our Team</h2>
@@ -96,14 +122,19 @@ const otherFounders = founders.filter(m => !m.is_featured);
 </Layout>
 
 <style>
+  /* ---- Shared container ---- */
   .team-container {
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 1.25rem;
   }
 
-  .alt-bg { background: var(--color-bg-light); }
+  /* Light grey background for alternating sections */
+  .alt-bg {
+    background: var(--color-bg-light);
+  }
 
+  /* Centred section headings */
   .section-title {
     text-align: center;
     color: var(--color-primary);
@@ -111,10 +142,10 @@ const otherFounders = founders.filter(m => !m.is_featured);
     margin-bottom: 2.5rem;
   }
 
-  /* Featured Founder (large card) */
+  /* ---- Featured founder card (large, two-column) ---- */
   .featured-card {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 1fr 1.5fr;   /* photo narrower, bio wider */
     gap: 3rem;
     align-items: center;
     background: white;
@@ -124,6 +155,7 @@ const otherFounders = founders.filter(m => !m.is_featured);
     border: 1px solid #f3f4f6;
   }
 
+  /* Photo fills the full height of the card */
   .featured-image img {
     width: 100%;
     height: 100%;
@@ -135,6 +167,7 @@ const otherFounders = founders.filter(m => !m.is_featured);
     padding: 2.5rem 2.5rem 2.5rem 0;
   }
 
+  /* "Lead Therapist" teal pill badge */
   .founder-badge {
     display: inline-block;
     background: var(--color-primary-light);
@@ -152,6 +185,7 @@ const otherFounders = founders.filter(m => !m.is_featured);
     margin-bottom: 0.25rem;
   }
 
+  /* Orange role title */
   .role {
     display: block;
     color: var(--color-secondary);
@@ -160,6 +194,7 @@ const otherFounders = founders.filter(m => !m.is_featured);
     margin-bottom: 0.25rem;
   }
 
+  /* Italic qualifications line */
   .quals {
     display: block;
     font-size: 0.9rem;
@@ -174,14 +209,14 @@ const otherFounders = founders.filter(m => !m.is_featured);
     font-size: 1.05rem;
   }
 
-  /* Founders Grid */
+  /* ---- Founders grid (side-by-side cards) ---- */
   .founders-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
   }
 
-  /* Profile Card */
+  /* ---- Profile card (shared by founders grid + clinical team) ---- */
   .profile-card {
     background: white;
     border-radius: var(--radius-md);
@@ -190,25 +225,31 @@ const otherFounders = founders.filter(m => !m.is_featured);
     border: 1px solid #f3f4f6;
     transition: transform 0.2s;
   }
+
   .profile-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-md);
   }
 
+  /* Founder cards have image on left, text on right */
   .founder-card {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     align-items: center;
   }
 
-  .card-image img,
-  .card-image-small img {
+  /* Image fills card height for founder cards */
+  .card-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
+
+  /* Fixed height for clinical team card images */
   .card-image-small img {
+    width: 100%;
     height: 260px;
+    object-fit: cover;
   }
 
   .card-info {
@@ -228,20 +269,25 @@ const otherFounders = founders.filter(m => !m.is_featured);
     margin-bottom: 0;
   }
 
-  /* Team Grid */
+  /* ---- Clinical team grid ---- */
   .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 2rem;
   }
 
+  /* ---- Mobile: single column ---- */
   @media (max-width: 768px) {
+    /* Featured card stacks photo above bio */
     .featured-card {
       grid-template-columns: 1fr;
     }
+
     .featured-info {
       padding: 1.5rem;
     }
+
+    /* Founder cards also stack vertically */
     .founder-card {
       grid-template-columns: 1fr;
     }

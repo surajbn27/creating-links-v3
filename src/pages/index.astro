@@ -1,17 +1,34 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
+// =============================================================
+// index.astro — Homepage
+//
+// Section order:
+//   1. Hero          (headline, CTA buttons, trust indicators)
+//   2. Services      (preview of first 4 services)
+//   3. School Readiness Highlight (signature program spotlight)
+//   4. Reviews       (parent testimonials)
+//   5. CTA Strip     (book an assessment)
+// =============================================================
+
+import Layout        from '../layouts/Layout.astro';
+import Hero          from '../components/Hero.astro';
 import ServicesSection from '../components/ServicesSection.astro';
-import Reviews from '../components/Reviews.astro';
+import Reviews       from '../components/Reviews.astro';
 ---
 
 <Layout>
+
+  <!-- 1. Hero banner -->
   <Hero />
+
+  <!-- 2. Services preview grid -->
   <ServicesSection />
 
-  <!-- School Readiness Highlight -->
+  <!-- 3. School Readiness Program spotlight -->
   <section class="highlight-section">
     <div class="highlight-container">
+
+      <!-- Text content -->
       <div class="highlight-content">
         <span class="highlight-badge">Signature Program</span>
         <h2>School Readiness Program</h2>
@@ -28,15 +45,22 @@ import Reviews from '../components/Reviews.astro';
         </ul>
         <a href="/services#school-readiness" class="btn btn-primary">Learn More</a>
       </div>
+
+      <!-- Placeholder image (replace with real photo when available) -->
       <div class="highlight-image">
-        <img src="https://placehold.co/520x380/267c88/white?text=School+Readiness" alt="School Readiness Program" />
+        <img
+          src="https://placehold.co/520x380/267c88/white?text=School+Readiness"
+          alt="School Readiness Program at Creating Links"
+        />
       </div>
+
     </div>
   </section>
 
+  <!-- 4. Parent reviews -->
   <Reviews />
 
-  <!-- CTA -->
+  <!-- 5. Bottom CTA strip -->
   <section class="cta-strip">
     <div class="container">
       <h2>Take the First Step Today</h2>
@@ -44,15 +68,17 @@ import Reviews from '../components/Reviews.astro';
       <a href="/contact" class="btn btn-white">Book an Assessment</a>
     </div>
   </section>
+
 </Layout>
 
 <style>
-  /* School Readiness Highlight */
+  /* ---- School Readiness Highlight section ---- */
   .highlight-section {
     padding: 5rem 1.25rem;
     background: var(--color-bg-light);
   }
 
+  /* Two-column layout (text left, image right) */
   .highlight-container {
     max-width: 1080px;
     margin: 0 auto;
@@ -62,6 +88,7 @@ import Reviews from '../components/Reviews.astro';
     align-items: center;
   }
 
+  /* ---- Badge ---- */
   .highlight-badge {
     display: inline-block;
     background: var(--color-secondary);
@@ -73,6 +100,7 @@ import Reviews from '../components/Reviews.astro';
     margin-bottom: 1rem;
   }
 
+  /* ---- Heading & body copy ---- */
   .highlight-content h2 {
     font-size: 2rem;
     color: var(--color-primary);
@@ -86,6 +114,7 @@ import Reviews from '../components/Reviews.astro';
     font-size: 1.05rem;
   }
 
+  /* ---- Feature bullet list ---- */
   .highlight-features {
     list-style: none;
     padding: 0;
@@ -101,6 +130,7 @@ import Reviews from '../components/Reviews.astro';
     gap: 0.5rem;
   }
 
+  /* Circular teal checkmark bullet */
   .highlight-features li::before {
     content: "✓";
     display: inline-flex;
@@ -113,21 +143,24 @@ import Reviews from '../components/Reviews.astro';
     border-radius: 50%;
     font-size: 0.7rem;
     font-weight: 700;
-    flex-shrink: 0;
+    flex-shrink: 0;   /* prevent shrinking when text is long */
   }
 
+  /* ---- Image ---- */
   .highlight-image img {
     width: 100%;
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-md);
   }
 
+  /* ---- Mobile: stack vertically, image above text ---- */
   @media (max-width: 768px) {
     .highlight-container {
       grid-template-columns: 1fr;
     }
+
     .highlight-image {
-      order: -1;
+      order: -1;   /* image moves above text on small screens */
     }
   }
 </style>

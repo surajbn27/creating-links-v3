@@ -1,16 +1,33 @@
 ---
+// =============================================================
+// Layout.astro — Root page layout used by every page
+//
+// Wraps content with:
+//   - <head> meta tags (title, description, fonts)
+//   - Navbar (top)
+//   - <main> slot (page-specific content goes here)
+//   - Footer (bottom)
+//   - WhatsAppFloat button (fixed, bottom-right)
+//
+// Usage:
+//   <Layout title="Page Title" description="Page description">
+//     ... page content ...
+//   </Layout>
+// =============================================================
+
 import '../styles/global.css';
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
+import Navbar      from '../components/Navbar.astro';
+import Footer      from '../components/Footer.astro';
 import WhatsAppFloat from '../components/WhatsAppFloat.astro';
 
+// Props with sensible defaults (used as site-wide fallback)
 interface Props {
-  title?: string;
+  title?:       string;
   description?: string;
 }
 
 const {
-  title = "Creating Links — Child Therapy & Development Centre",
+  title       = "Creating Links — Child Therapy & Development Centre",
   description = "Specialized speech therapy, occupational therapy, and special education for children in Bengaluru. Empowering families, enabling growth."
 } = Astro.props;
 ---
@@ -24,19 +41,28 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts: Inter (weights 400–800) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
     <title>{title}</title>
   </head>
+
   <body>
     <Navbar />
+
+    <!-- Page content injected here by each individual page -->
     <main>
       <slot />
     </main>
+
     <Footer />
+
+    <!-- Floating WhatsApp button (fixed bottom-right on all pages) -->
     <WhatsAppFloat />
   </body>
 </html>

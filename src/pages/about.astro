@@ -1,9 +1,24 @@
 ---
+// =============================================================
+// about.astro — About Us page
+//
+// Section order:
+//   1. Page header   (teal banner)
+//   2. Mission       (text + image, two-column)
+//   3. Philosophy    (4 cards: IEP, Learning to Learn, Independence, Life Skills)
+//   4. Why Choose Us (checklist + image, reversed two-column)
+//   5. CTA Strip     (contact us)
+// =============================================================
+
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="About Us — Creating Links" description="Learn about Creating Links, a child therapy and development centre in Bengaluru dedicated to empowering children and families.">
+<Layout
+  title="About Us — Creating Links"
+  description="Learn about Creating Links, a child therapy and development centre in Bengaluru dedicated to empowering children and families."
+>
 
+  <!-- 1. Page header banner -->
   <section class="page-header">
     <div class="container">
       <h1>About Creating Links</h1>
@@ -11,9 +26,10 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- Mission -->
+  <!-- 2. Our Mission -->
   <section class="section">
     <div class="about-container grid">
+
       <div class="content">
         <h2>Our Mission</h2>
         <p>
@@ -28,16 +44,23 @@ import Layout from '../layouts/Layout.astro';
           educators dedicated to your child's growth.
         </p>
       </div>
+
+      <!-- Placeholder — replace with real clinic photo -->
       <div class="image-wrapper">
-        <img src="https://placehold.co/550x400/267c88/white?text=Our+Clinic" alt="Creating Links Clinic" />
+        <img
+          src="https://placehold.co/550x400/267c88/white?text=Our+Clinic"
+          alt="Creating Links Clinic"
+        />
       </div>
+
     </div>
   </section>
 
-  <!-- Philosophy -->
+  <!-- 3. Our Philosophy (4 cards) -->
   <section class="section alt-bg">
     <div class="about-container">
       <div class="philosophy-grid">
+
         <div class="philosophy-card">
           <span class="card-icon">🌱</span>
           <h3>Individualized Growth</h3>
@@ -47,6 +70,7 @@ import Layout from '../layouts/Layout.astro';
             social-emotional regulation.
           </p>
         </div>
+
         <div class="philosophy-card">
           <span class="card-icon">📖</span>
           <h3>"Learning to Learn" Philosophy</h3>
@@ -55,6 +79,7 @@ import Layout from '../layouts/Layout.astro';
             in any educational setting through a supportive, data-driven approach.
           </p>
         </div>
+
         <div class="philosophy-card">
           <span class="card-icon">🚀</span>
           <h3>Pathways to Independence</h3>
@@ -64,6 +89,7 @@ import Layout from '../layouts/Layout.astro';
             school settings.
           </p>
         </div>
+
         <div class="philosophy-card">
           <span class="card-icon">❤️</span>
           <h3>Functional Life Skills</h3>
@@ -72,13 +98,15 @@ import Layout from '../layouts/Layout.astro';
             regulation tools, and visual schedules that empower children for life.
           </p>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Why Choose Us -->
+  <!-- 4. Why Choose Us (image on left, checklist on right) -->
   <section class="section">
     <div class="about-container grid reverse">
+
       <div class="content">
         <h2>Why Choose Creating Links?</h2>
         <ul class="check-list">
@@ -91,13 +119,19 @@ import Layout from '../layouts/Layout.astro';
           <li>Evidence-based communication tools including PECs and AAC</li>
         </ul>
       </div>
+
+      <!-- Placeholder — replace with real photo -->
       <div class="image-wrapper">
-        <img src="https://placehold.co/550x400/f4a261/white?text=Why+Choose+Us" alt="Our caring approach" />
+        <img
+          src="https://placehold.co/550x400/f4a261/white?text=Why+Choose+Us"
+          alt="Our caring approach at Creating Links"
+        />
       </div>
+
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- 5. CTA strip -->
   <section class="cta-strip">
     <div class="container">
       <h2>Ready to start your child's journey?</h2>
@@ -109,16 +143,19 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
+  /* ---- Shared container ---- */
   .about-container {
     max-width: 1080px;
     margin: 0 auto;
     padding: 0 1.25rem;
   }
 
+  /* Light grey background for alternating sections */
   .alt-bg {
     background: var(--color-bg-light);
   }
 
+  /* ---- Two-column layout ---- */
   .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -126,13 +163,11 @@ import Layout from '../layouts/Layout.astro';
     align-items: center;
   }
 
-  .reverse .content {
-    order: 1;
-  }
-  .reverse .image-wrapper {
-    order: 0;
-  }
+  /* .reverse flips column order so image appears on the left */
+  .reverse .content       { order: 1; }
+  .reverse .image-wrapper { order: 0; }
 
+  /* ---- Section headings ---- */
   h2 {
     color: var(--color-primary);
     font-size: 2rem;
@@ -146,13 +181,14 @@ import Layout from '../layouts/Layout.astro';
     font-size: 1.05rem;
   }
 
+  /* ---- Images ---- */
   .image-wrapper img {
     width: 100%;
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-md);
   }
 
-  /* Philosophy Cards */
+  /* ---- Philosophy cards (2×2 grid) ---- */
   .philosophy-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -167,6 +203,7 @@ import Layout from '../layouts/Layout.astro';
     border: 1px solid #f3f4f6;
     transition: transform 0.2s;
   }
+
   .philosophy-card:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-md);
@@ -189,7 +226,7 @@ import Layout from '../layouts/Layout.astro';
     margin-bottom: 0;
   }
 
-  /* Check List */
+  /* ---- Why Choose Us checklist ---- */
   .check-list {
     list-style: none;
     padding: 0;
@@ -205,6 +242,7 @@ import Layout from '../layouts/Layout.astro';
     gap: 0.6rem;
   }
 
+  /* Circular teal checkmark bullet */
   .check-list li::before {
     content: "✓";
     display: inline-flex;
@@ -219,15 +257,20 @@ import Layout from '../layouts/Layout.astro';
     font-weight: 700;
   }
 
+  /* ---- Mobile: stack everything vertically ---- */
   @media (max-width: 768px) {
     .grid {
       grid-template-columns: 1fr;
     }
-    .reverse .content { order: 0; }
+
+    /* Restore natural column order on mobile */
+    .reverse .content       { order: 0; }
     .reverse .image-wrapper { order: -1; }
+
     .philosophy-grid {
       grid-template-columns: 1fr;
     }
+
     .image-wrapper {
       margin-bottom: 1rem;
     }

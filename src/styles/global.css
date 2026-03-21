@@ -1,47 +1,72 @@
-/* =========================================
-   Creating Links — Global Styles v2.0
-   ========================================= */
+/* =============================================================
+   global.css — Site-wide base styles for Creating Links
+
+   Contents:
+     1. CSS custom properties (design tokens)
+     2. Reset & base element styles
+     3. Utility: .container
+     4. Typography defaults
+     5. Button variants (.btn-primary, .btn-outline, .btn-white)
+     6. Reusable page header (.page-header)
+     7. Reusable section helpers (.section, .section-header)
+     8. Reusable CTA strip (.cta-strip)
+     9. Mobile responsive overrides
+   ============================================================= */
+
+
+/* ============================================================
+   1. CSS CUSTOM PROPERTIES (Design Tokens)
+   All colours, spacing, and shadows are defined here so they
+   can be changed in one place and cascade everywhere.
+   ============================================================ */
 
 :root {
-  /* Brand Colors */
-  --color-primary: #267c88;
-  --color-primary-dark: #1e6370;
-  --color-primary-light: #e0f2f1;
-  --color-secondary: #f4a261;
-  --color-secondary-dark: #e7904e;
+  /* --- Brand colours --- */
+  --color-primary:       #267c88;   /* teal — main brand colour */
+  --color-primary-dark:  #1e6370;   /* darker teal for gradients/hover */
+  --color-primary-light: #e0f2f1;   /* very light teal for backgrounds/badges */
+  --color-secondary:     #f4a261;   /* warm orange — used for CTA buttons */
+  --color-secondary-dark:#e7904e;   /* darker orange for hover states */
 
-  /* Text */
-  --color-text-main: #1f2937;
-  --color-text-body: #4b5563;
-  --color-text-light: #ffffff;
-  --color-text-muted: #6b7280;
+  /* --- Text colours --- */
+  --color-text-main:  #1f2937;   /* near-black for headings */
+  --color-text-body:  #4b5563;   /* dark grey for body copy */
+  --color-text-light: #ffffff;   /* white text (on dark backgrounds) */
+  --color-text-muted: #6b7280;   /* light grey for subtitles / meta text */
 
-  /* Backgrounds */
-  --color-bg-light: #f9fafb;
+  /* --- Backgrounds --- */
+  --color-bg-light: #f9fafb;   /* off-white used for alternating sections */
   --color-bg-white: #ffffff;
 
-  /* Spacing */
-  --section-padding: 5rem 1.25rem;
-  --container-max: 1140px;
+  /* --- Spacing --- */
+  --section-padding: 5rem 1.25rem;   /* default padding for full-width sections */
+  --container-max:   1140px;         /* maximum content width */
 
-  /* Typography */
-  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  /* --- Typography --- */
+  --font-body:    'Inter', system-ui, -apple-system, sans-serif;
   --font-heading: 'Inter', system-ui, -apple-system, sans-serif;
 
-  /* Layout */
-  --navbar-height: 58px;
+  /* --- Layout --- */
+  --navbar-height: 58px;   /* used by services page sticky nav: top: var(--navbar-height) */
 
-  /* Borders & Shadows */
+  /* --- Borders & shadows --- */
   --radius-sm: 6px;
   --radius-md: 12px;
   --radius-lg: 16px;
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
-  --shadow-lg: 0 8px 24px rgba(0,0,0,0.1);
+  --shadow-sm: 0 1px 3px  rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.10);
 }
 
-/* ---- Reset & Base ---- */
-*, *::before, *::after {
+
+/* ============================================================
+   2. RESET & BASE ELEMENTS
+   ============================================================ */
+
+/* Apply border-box sizing to everything */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -49,22 +74,25 @@ html {
   font-family: var(--font-body);
   background: var(--color-bg-white);
   color: var(--color-text-main);
-  scroll-behavior: smooth;
+  scroll-behavior: smooth;   /* smooth anchor-link scrolling */
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  overflow-x: hidden;   /* prevent horizontal scroll on mobile */
   max-width: 100vw;
 }
 
+/* Flex column on body so footer is always pushed to the bottom */
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
+/* <main> must flex-grow so it fills space between navbar and footer */
 main {
   flex: 1;
 }
@@ -72,7 +100,7 @@ main {
 img {
   max-width: 100%;
   height: auto;
-  display: block;
+  display: block;   /* removes default inline-block gap below images */
 }
 
 a {
@@ -80,7 +108,13 @@ a {
   text-decoration: none;
 }
 
-/* ---- Container ---- */
+
+/* ============================================================
+   3. UTILITY — .container
+   Centres content and caps it at --container-max width.
+   Used inside full-width sections.
+   ============================================================ */
+
 .container {
   max-width: var(--container-max);
   margin: 0 auto;
@@ -88,7 +122,11 @@ a {
   width: 100%;
 }
 
-/* ---- Typography ---- */
+
+/* ============================================================
+   4. TYPOGRAPHY DEFAULTS
+   ============================================================ */
+
 h1, h2, h3, h4 {
   font-family: var(--font-heading);
   color: var(--color-text-main);
@@ -102,7 +140,15 @@ p {
   margin-top: 0;
 }
 
-/* ---- Buttons ---- */
+
+/* ============================================================
+   5. BUTTONS
+   Base class: .btn
+   Variants:   .btn-primary  (orange — main CTA)
+               .btn-outline  (teal border — secondary action)
+               .btn-white    (white — used inside teal/orange strips)
+   ============================================================ */
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -117,6 +163,7 @@ p {
   transition: all 0.2s ease;
 }
 
+/* Orange filled button */
 .btn-primary {
   background-color: var(--color-secondary);
   color: white;
@@ -126,6 +173,7 @@ p {
   transform: translateY(-1px);
 }
 
+/* Teal outline button */
 .btn-outline {
   border: 2px solid var(--color-primary);
   color: var(--color-primary);
@@ -136,6 +184,7 @@ p {
   color: white;
 }
 
+/* White button — for use inside coloured sections */
 .btn-white {
   background-color: white;
   color: var(--color-secondary);
@@ -146,71 +195,107 @@ p {
   box-shadow: var(--shadow-md);
 }
 
-/* ---- Page Header (reusable) ---- */
+
+/* ============================================================
+   6. PAGE HEADER
+   Reusable teal gradient banner at the top of inner pages.
+   NOTE: !important is required here because Astro's scoped
+   component styles have higher specificity than global styles.
+   ============================================================ */
+
 .page-header {
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   color: white;
   padding: 4rem 1.25rem;
   text-align: center;
 }
+
+/* !important overrides Astro-scoped `h1 { color: var(--color-text-main) }` rules */
 .page-header h1 {
   color: white !important;
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
 }
+
+/* !important overrides Astro-scoped `p { color: var(--color-text-body) }` rules */
 .page-header p {
-  color: rgba(255,255,255,0.9) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
   font-size: 1.15rem;
   max-width: 600px;
   margin: 0 auto;
 }
 
-/* ---- Section Helpers ---- */
+
+/* ============================================================
+   7. SECTION HELPERS
+   .section         — applies standard vertical padding
+   .section-header  — centred heading + subtitle block
+   ============================================================ */
+
 .section {
   padding: var(--section-padding);
 }
+
 .section-header {
   text-align: center;
   margin-bottom: 3rem;
 }
+
 .section-header h2 {
   font-size: 2.25rem;
   color: var(--color-primary);
   margin-bottom: 0.75rem;
 }
+
 .section-header p {
   font-size: 1.1rem;
   max-width: 600px;
   margin: 0 auto;
 }
 
-/* ---- CTA Strip ---- */
+
+/* ============================================================
+   8. CTA STRIP
+   Full-width orange gradient banner with white text + button.
+   NOTE: Same !important reasoning as .page-header above.
+   ============================================================ */
+
 .cta-strip {
   background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-dark) 100%);
   padding: 3.5rem 1.25rem;
   text-align: center;
   color: white;
 }
+
+/* !important overrides Astro-scoped heading colour rules */
 .cta-strip h2 {
   color: white !important;
   font-size: 2rem;
   margin-bottom: 1rem;
 }
+
+/* !important overrides Astro-scoped paragraph colour rules */
 .cta-strip p {
-  color: rgba(255,255,255,0.9) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
   margin-bottom: 1.5rem;
   font-size: 1.1rem;
 }
 
-/* ---- Mobile Responsive ---- */
+
+/* ============================================================
+   9. MOBILE RESPONSIVE OVERRIDES
+   ============================================================ */
+
 @media (max-width: 768px) {
+
   :root {
-    --section-padding: 3rem 1rem;
+    --section-padding: 3rem 1rem;   /* tighter padding on small screens */
   }
 
   .page-header {
     padding: 3rem 1rem;
   }
+
   .page-header h1 {
     font-size: 2rem;
   }
