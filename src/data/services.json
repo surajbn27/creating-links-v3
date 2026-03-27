@@ -52,10 +52,10 @@
   },
   {
     "id": "behavioral-therapy",
-    "title": "Behavioral Therapy",
+    "title": "Beyond Behavioral Therapy: Complete Psychological Assessment & Care",
     "subtitle": "",
     "icon": "🧠",
-    "shortDescription": "Evidence-based strategies to understand and positively shape children's behaviour and emotional regulation.",
+    "shortDescription": "Comprehensive psychological assessment and evidence-based strategies to understand, support, and positively shape children's behaviour and emotional wellbeing.",
     "description": "Our Behavioral Therapy programme uses evidence-based approaches to help children understand their emotions, manage challenging behaviours, and develop positive social interactions. We work with families to implement consistent strategies at home, school, and in the community.",
     "image": "/images/services/behavioral-therapy.jpg",
     "benefits": [
@@ -73,12 +73,12 @@
     "subtitle": "",
     "icon": "🗣️",
     "shortDescription": "Building communication skills through targeted speech, language, and AAC interventions.",
-    "description": "Our Speech and Language therapists work with children who have delays or disorders in speech, language, or communication. Whether a child is non-verbal, has articulation difficulties, or struggles with understanding language, we provide tailored therapy including AAC tools such as PECS and AVAZ.",
+    "description": "We provide individualised, child-centred therapy with tailored intervention plans designed to meet each child's unique needs. Our approach integrates evidence-based practices, incorporating tools such as the Oral Placement Therapy (OPT) approach and Augmentative and Alternative Communication (AAC) systems, including apps like Avaz and low-tech communication boards, to support functional and meaningful communication development.",
     "image": "/images/services/speech-therapy.jpg",
     "benefits": [
       "Improved articulation and speech clarity",
       "Language comprehension and expression",
-      "AAC support: PECS, AVAZ, and communication boards",
+      "AAC support: Avaz app and low-tech communication boards",
       "Fluency and stuttering therapy",
       "Social communication and pragmatic skills",
       "Functional Communication Training (FCT)"
