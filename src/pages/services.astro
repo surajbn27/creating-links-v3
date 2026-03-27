@@ -75,11 +75,13 @@ import servicesData from '../data/services.json';
           </div>
 
           <!-- Image column -->
+          <!-- imagePosition overrides the default "center top" per-service if set in services.json -->
           <div class="img-col">
             <img
               src={service.image}
               alt={`${service.title} at Creating Links`}
               loading="lazy"
+              style={service.imagePosition ? `object-position: ${service.imagePosition}` : undefined}
             />
           </div>
         </div>

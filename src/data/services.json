@@ -58,6 +58,7 @@
     "shortDescription": "Comprehensive psychological assessment and evidence-based strategies to understand, support, and positively shape children's behaviour and emotional wellbeing.",
     "description": "Our Behavioral Therapy programme uses evidence-based approaches to help children understand their emotions, manage challenging behaviours, and develop positive social interactions. We work with families to implement consistent strategies at home, school, and in the community.",
     "image": "/images/services/behavioral-therapy.jpg",
+    "imagePosition": "center 70%",
     "benefits": [
       "Reduced challenging and disruptive behaviours",
       "Improved emotional regulation and self-control",
