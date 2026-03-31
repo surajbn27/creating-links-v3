@@ -33,7 +33,12 @@
       <!-- CTA buttons -->
       <div class="hero-buttons">
         <a href="/contact" class="btn btn-primary">Book an Assessment</a>
-        <a href="/services" class="btn btn-outline">Our Services</a>
+        <a
+          href="https://wa.me/918105272466?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20therapy%20services."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-whatsapp"
+        >💬 Chat on WhatsApp</a>
       </div>
 
       <!-- Three quick trust signals below the buttons -->
@@ -54,12 +59,12 @@
 
     </div>
 
-    <!-- Right column: hero image -->
+    <!-- Right column: hero image placeholder -->
     <div class="hero-image">
-      <img
-        src="https://placehold.co/580x420/267c88/white?text=Therapy+Session"
-        alt="A therapy session at Creating Links"
-      />
+      <div class="image-placeholder">
+        <span class="placeholder-icon">🏥</span>
+        <span class="placeholder-text">Image Coming Soon</span>
+      </div>
     </div>
 
   </div>
@@ -119,6 +124,26 @@
     display: flex;
     gap: 1rem;
     margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-whatsapp {
+    background-color: #25D366;
+    color: white !important;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: background-color 0.2s;
+  }
+
+  .btn-whatsapp:hover {
+    background-color: #1DA851;
   }
 
   /* ---- Trust indicators ---- */
@@ -141,11 +166,29 @@
     font-size: 1.1rem;
   }
 
-  /* ---- Hero image ---- */
-  .hero-image img {
+  /* ---- Hero image placeholder ---- */
+  .hero-image .image-placeholder {
     width: 100%;
+    min-height: 420px;
     border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1a5c66 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
     box-shadow: var(--shadow-lg);
+  }
+
+  .placeholder-icon {
+    font-size: 3rem;
+    opacity: 0.7;
+  }
+
+  .placeholder-text {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.95rem;
+    font-weight: 500;
   }
 
   /* ---- Mobile: stack columns vertically ---- */

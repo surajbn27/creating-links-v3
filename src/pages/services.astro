@@ -74,13 +74,12 @@ import servicesData from '../data/services.json';
             </ul>
           </div>
 
-          <!-- Image column -->
+          <!-- Image column placeholder -->
           <div class="img-col">
-            <img
-              src={service.image}
-              alt={`${service.title} at Creating Links`}
-              loading="lazy"
-            />
+            <div class="image-placeholder">
+              <span class="placeholder-icon">{service.icon}</span>
+              <span class="placeholder-text">Image Coming Soon</span>
+            </div>
           </div>
         </div>
       ))}
@@ -179,6 +178,30 @@ import servicesData from '../data/services.json';
     height: auto;
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-md);
+  }
+
+  .image-placeholder {
+    width: 100%;
+    min-height: 320px;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1a5c66 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    box-shadow: var(--shadow-md);
+  }
+
+  .placeholder-icon {
+    font-size: 3rem;
+    opacity: 0.7;
+  }
+
+  .placeholder-text {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.95rem;
+    font-weight: 500;
   }
 
   /* ---- Service title row (icon + heading + optional subtitle) ---- */

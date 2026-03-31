@@ -20,7 +20,10 @@ const currentYear = new Date().getFullYear();
 
     <!-- Column 1: Brand -->
     <div class="footer-col brand-col">
-      <h3>🔗 Creating Links</h3>
+      <div class="footer-brand">
+        <img src="/images/logo_light.png" alt="Creating Links Logo" class="footer-logo" />
+        <h3>Creating Links</h3>
+      </div>
       <p>
         Empowering children and families through specialized therapy, education,
         and compassionate care in Bengaluru.
@@ -88,10 +91,23 @@ const currentYear = new Date().getFullYear();
   }
 
   /* ---- Brand column ---- */
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-logo {
+    height: 36px;
+    width: auto;
+    object-fit: contain;
+  }
+
   .brand-col h3 {
     color: var(--color-primary);
     font-size: 1.35rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0;
   }
 
   .tagline {

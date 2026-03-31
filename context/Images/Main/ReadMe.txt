@@ -1,0 +1,1 @@
+Include images for main page. Like banner image, hero image etc.

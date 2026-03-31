@@ -19,6 +19,10 @@ import reviewsData from '../data/reviews.json';
     <div class="section-header">
       <h2>What Parents Say</h2>
       <p>Real stories from families we've supported on their journey.</p>
+      <div class="google-badge">
+        <span class="google-stars">⭐⭐⭐⭐⭐</span>
+        <span class="google-rating">5.0 rating on Google (15 reviews)</span>
+      </div>
     </div>
 
     <!-- Responsive grid of review cards -->
@@ -35,12 +39,23 @@ import reviewsData from '../data/reviews.json';
           <!-- Reviewer identity -->
           <div class="reviewer-info">
             <strong>{review.parent_name}</strong>
-            <span class="child-info">Parent of child ({review.child_age})</span>
-            <span class="service-tag">{review.service}</span>
+            <span class="child-info">via Google Reviews</span>
           </div>
 
         </div>
       ))}
+    </div>
+
+    <!-- Link to full Google Reviews -->
+    <div class="google-link">
+      <a
+        href="https://www.google.com/maps/place/Creating+Links/data=!4m2!3m1!1s0x3bae17fae7ddd857:0xfade801edcfd17f3"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-outline"
+      >
+        See All Reviews on Google →
+      </a>
     </div>
 
   </div>
@@ -73,6 +88,26 @@ import reviewsData from '../data/reviews.json';
   .section-header p {
     max-width: 500px;
     margin: 0 auto;
+  }
+
+  .google-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .google-stars {
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+
+  .google-rating {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    font-weight: 600;
   }
 
   /* ---- Cards grid ---- */
@@ -120,15 +155,10 @@ import reviewsData from '../data/reviews.json';
     margin-bottom: 0.5rem;
   }
 
-  /* Coloured pill showing which service they used */
-  .service-tag {
-    display: inline-block;
-    background: var(--color-primary-light);
-    color: var(--color-primary);
-    padding: 3px 10px;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    font-weight: 600;
+  /* Link to all Google reviews */
+  .google-link {
+    text-align: center;
+    margin-top: 2.5rem;
   }
 
   /* ---- Mobile: single column ---- */

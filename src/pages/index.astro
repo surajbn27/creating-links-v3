@@ -48,10 +48,10 @@ import Reviews       from '../components/Reviews.astro';
 
       <!-- Placeholder image (replace with real photo when available) -->
       <div class="highlight-image">
-        <img
-          src="https://placehold.co/520x380/267c88/white?text=School+Readiness"
-          alt="School Readiness Program at Creating Links"
-        />
+        <div class="image-placeholder">
+          <span class="placeholder-icon">📚</span>
+          <span class="placeholder-text">Image Coming Soon</span>
+        </div>
       </div>
 
     </div>
@@ -151,6 +151,30 @@ import Reviews       from '../components/Reviews.astro';
     width: 100%;
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-md);
+  }
+
+  .image-placeholder {
+    width: 100%;
+    min-height: 380px;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1a5c66 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    box-shadow: var(--shadow-md);
+  }
+
+  .placeholder-icon {
+    font-size: 3rem;
+    opacity: 0.7;
+  }
+
+  .placeholder-text {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.95rem;
+    font-weight: 500;
   }
 
   /* ---- Mobile: stack vertically, image above text ---- */
