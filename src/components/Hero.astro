@@ -9,6 +9,8 @@
 //   - Two CTA buttons (Book Assessment / Our Services)
 //   - Three trust indicators (Certified, Individualized, Family-Centered)
 // =============================================================
+
+import IndianIllustration from './IndianIllustration.astro';
 ---
 
 <section class="hero">
@@ -59,12 +61,9 @@
 
     </div>
 
-    <!-- Right column: hero image placeholder -->
+    <!-- Right column: Indian-themed illustrated visual -->
     <div class="hero-image">
-      <div class="image-placeholder">
-        <span class="placeholder-icon">🏥</span>
-        <span class="placeholder-text">Image Coming Soon</span>
-      </div>
+      <IndianIllustration icon="🌸" palette="teal" minHeight="420px" />
     </div>
 
   </div>
@@ -166,29 +165,9 @@
     font-size: 1.1rem;
   }
 
-  /* ---- Hero image placeholder ---- */
-  .hero-image .image-placeholder {
+  /* ---- Hero illustration wrapper ---- */
+  .hero-image {
     width: 100%;
-    min-height: 420px;
-    border-radius: var(--radius-lg);
-    background: linear-gradient(135deg, var(--color-primary) 0%, #1a5c66 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    box-shadow: var(--shadow-lg);
-  }
-
-  .placeholder-icon {
-    font-size: 3rem;
-    opacity: 0.7;
-  }
-
-  .placeholder-text {
-    color: rgba(255,255,255,0.7);
-    font-size: 0.95rem;
-    font-weight: 500;
   }
 
   /* ---- Mobile: stack columns vertically ---- */

@@ -11,6 +11,7 @@
 // =============================================================
 
 import Layout from '../layouts/Layout.astro';
+import IndianIllustration from '../components/IndianIllustration.astro';
 ---
 
 <Layout
@@ -45,12 +46,9 @@ import Layout from '../layouts/Layout.astro';
         </p>
       </div>
 
-      <!-- Placeholder — replace with real clinic photo -->
+      <!-- Indian-themed illustration -->
       <div class="image-wrapper">
-        <div class="image-placeholder">
-          <span class="placeholder-icon">🏥</span>
-          <span class="placeholder-text">Image Coming Soon</span>
-        </div>
+        <IndianIllustration icon="🌱" palette="green" minHeight="360px" />
       </div>
 
     </div>
@@ -120,12 +118,9 @@ import Layout from '../layouts/Layout.astro';
         </ul>
       </div>
 
-      <!-- Placeholder — replace with real photo -->
+      <!-- Indian-themed illustration -->
       <div class="image-wrapper">
-        <div class="image-placeholder alt">
-          <span class="placeholder-icon">💛</span>
-          <span class="placeholder-text">Image Coming Soon</span>
-        </div>
+        <IndianIllustration icon="💛" palette="saffron" minHeight="360px" />
       </div>
 
     </div>
@@ -186,34 +181,6 @@ import Layout from '../layouts/Layout.astro';
     width: 100%;
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-md);
-  }
-
-  .image-placeholder {
-    width: 100%;
-    min-height: 400px;
-    border-radius: var(--radius-md);
-    background: linear-gradient(135deg, var(--color-primary) 0%, #1a5c66 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    box-shadow: var(--shadow-md);
-  }
-
-  .image-placeholder.alt {
-    background: linear-gradient(135deg, var(--color-secondary) 0%, #d4863e 100%);
-  }
-
-  .placeholder-icon {
-    font-size: 3rem;
-    opacity: 0.7;
-  }
-
-  .placeholder-text {
-    color: rgba(255,255,255,0.7);
-    font-size: 0.95rem;
-    font-weight: 500;
   }
 
   /* ---- Philosophy cards (2×2 grid) ---- */

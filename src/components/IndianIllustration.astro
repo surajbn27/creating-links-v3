@@ -1,0 +1,197 @@
+---
+// =============================================================
+// IndianIllustration.astro — Indian / Bengaluru-themed
+// animated illustrated placeholder
+//
+// Props:
+//   icon      — emoji displayed at the centre (required)
+//   palette   — colour theme: 'teal' | 'saffron' | 'lotus' |
+//               'green' | 'purple'  (default 'teal')
+//   minHeight — CSS min-height string (default '340px')
+// =============================================================
+
+interface Props {
+  icon: string;
+  palette?: 'teal' | 'saffron' | 'lotus' | 'green' | 'purple';
+  minHeight?: string;
+}
+
+const { icon, palette = 'teal', minHeight = '340px' } = Astro.props;
+
+const gradients: Record<string, string> = {
+  teal:    'linear-gradient(135deg, #062f37 0%, #0d5460 50%, #267c88 100%)',
+  saffron: 'linear-gradient(135deg, #5a1200 0%, #a02800 50%, #d44000 100%)',
+  lotus:   'linear-gradient(135deg, #360020 0%, #7a0f45 50%, #ad1c65 100%)',
+  green:   'linear-gradient(135deg, #0c2c14 0%, #1a5c25 50%, #2d8b3a 100%)',
+  purple:  'linear-gradient(135deg, #120035 0%, #3a1280 50%, #5c35b8 100%)',
+};
+
+const bg = gradients[palette] ?? gradients.teal;
+---
+
+<div class="indian-illus" style={`min-height: ${minHeight}; background: ${bg};`}>
+
+  <!-- Lotus mandala SVG (rotates slowly) -->
+  <svg class="mandala" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Outer dashed ring -->
+    <circle cx="100" cy="100" r="90" stroke="rgba(255,255,255,0.08)"
+            stroke-width="1" stroke-dasharray="4 6"/>
+
+    <!-- 8 lotus petals — each is an ellipse offset above centre, rotated around (100,100) -->
+    <ellipse cx="100" cy="66" rx="9" ry="24" fill="rgba(255,255,255,0.14)"
+             transform="rotate(0, 100, 100)"/>
+    <ellipse cx="100" cy="66" rx="9" ry="24" fill="rgba(255,255,255,0.14)"
+             transform="rotate(45, 100, 100)"/>
+    <ellipse cx="100" cy="66" rx="9" ry="24" fill="rgba(255,255,255,0.14)"
+             transform="rotate(90, 100, 100)"/>
+    <ellipse cx="100" cy="66" rx="9" ry="24" fill="rgba(255,255,255,0.14)"
+             transform="rotate(135, 100, 100)"/>
+    <ellipse cx="100" cy="66" rx="9" ry="24" fill="rgba(255,255,255,0.14)"
+             transform="rotate(180, 100, 100)"/>
+    <ellipse cx="100" cy="66" rx="9" ry="24" fill="rgba(255,255,255,0.14)"
+             transform="rotate(225, 100, 100)"/>
+    <ellipse cx="100" cy="66" rx="9" ry="24" fill="rgba(255,255,255,0.14)"
+             transform="rotate(270, 100, 100)"/>
+    <ellipse cx="100" cy="66" rx="9" ry="24" fill="rgba(255,255,255,0.14)"
+             transform="rotate(315, 100, 100)"/>
+
+    <!-- Inner decorative ring -->
+    <circle cx="100" cy="100" r="38" stroke="rgba(255,255,255,0.16)" stroke-width="1"/>
+
+    <!-- 12 accent dots evenly spaced on r = 55 -->
+    <circle cx="155" cy="100" r="2.5" fill="rgba(255,255,255,0.45)"/>
+    <circle cx="148" cy="128" r="2.5" fill="rgba(255,255,255,0.45)"/>
+    <circle cx="128" cy="148" r="2.5" fill="rgba(255,255,255,0.45)"/>
+    <circle cx="100" cy="155" r="2.5" fill="rgba(255,255,255,0.45)"/>
+    <circle cx="72"  cy="148" r="2.5" fill="rgba(255,255,255,0.45)"/>
+    <circle cx="52"  cy="128" r="2.5" fill="rgba(255,255,255,0.45)"/>
+    <circle cx="45"  cy="100" r="2.5" fill="rgba(255,255,255,0.45)"/>
+    <circle cx="52"  cy="72"  r="2.5" fill="rgba(255,255,255,0.45)"/>
+    <circle cx="72"  cy="52"  r="2.5" fill="rgba(255,255,255,0.45)"/>
+    <circle cx="100" cy="45"  r="2.5" fill="rgba(255,255,255,0.45)"/>
+    <circle cx="128" cy="52"  r="2.5" fill="rgba(255,255,255,0.45)"/>
+    <circle cx="148" cy="72"  r="2.5" fill="rgba(255,255,255,0.45)"/>
+
+    <!-- Small diamonds at 8 intermediate positions on r = 72 -->
+    <rect x="169" y="96" width="8" height="8" fill="rgba(255,255,255,0.2)"
+          transform="rotate(45, 173, 100)"/>
+    <rect x="126" y="126" width="8" height="8" fill="rgba(255,255,255,0.2)"
+          transform="rotate(45, 130, 130)"/>
+    <rect x="96"  y="169" width="8" height="8" fill="rgba(255,255,255,0.2)"
+          transform="rotate(45, 100, 173)"/>
+    <rect x="62"  y="126" width="8" height="8" fill="rgba(255,255,255,0.2)"
+          transform="rotate(45, 66, 130)"/>
+    <rect x="23"  y="96"  width="8" height="8" fill="rgba(255,255,255,0.2)"
+          transform="rotate(45, 27, 100)"/>
+    <rect x="62"  y="62"  width="8" height="8" fill="rgba(255,255,255,0.2)"
+          transform="rotate(45, 66, 66)"/>
+    <rect x="96"  y="23"  width="8" height="8" fill="rgba(255,255,255,0.2)"
+          transform="rotate(45, 100, 27)"/>
+    <rect x="126" y="62"  width="8" height="8" fill="rgba(255,255,255,0.2)"
+          transform="rotate(45, 130, 66)"/>
+  </svg>
+
+  <!-- Three concentric spinning rings -->
+  <div class="ring r1"></div>
+  <div class="ring r2"></div>
+  <div class="ring r3"></div>
+
+  <!-- Central floating icon -->
+  <div class="icon-float">{icon}</div>
+
+  <!-- Four sparkle accents -->
+  <span class="spark s1">✦</span>
+  <span class="spark s2">✦</span>
+  <span class="spark s3">✦</span>
+  <span class="spark s4">✦</span>
+
+</div>
+
+<style>
+  /* ---- Container ---- */
+  .indian-illus {
+    position: relative;
+    width: 100%;
+    border-radius: var(--radius-lg, 16px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  }
+
+  /* ---- Mandala SVG ---- */
+  .mandala {
+    position: absolute;
+    width: min(75%, 310px);
+    animation: spin-slow 40s linear infinite;
+    opacity: 0.55;
+    pointer-events: none;
+  }
+
+  /* ---- Concentric rings ---- */
+  .ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255, 255, 255, 0.11);
+    pointer-events: none;
+  }
+
+  .r1 {
+    width: 90px;
+    height: 90px;
+    animation: spin-slow 10s linear infinite reverse;
+  }
+
+  .r2 {
+    width: 175px;
+    height: 175px;
+    animation: spin-slow 20s linear infinite;
+  }
+
+  .r3 {
+    width: 268px;
+    height: 268px;
+    animation: spin-slow 30s linear infinite reverse;
+  }
+
+  @keyframes spin-slow {
+    from { transform: rotate(0deg);   }
+    to   { transform: rotate(360deg); }
+  }
+
+  /* ---- Central floating icon ---- */
+  .icon-float {
+    position: relative;
+    z-index: 2;
+    font-size: 5rem;
+    animation: float 3.5s ease-in-out infinite;
+    filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.35));
+    line-height: 1;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0);     }
+    50%       { transform: translateY(-10px); }
+  }
+
+  /* ---- Sparkle accents ---- */
+  .spark {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.75rem;
+    z-index: 2;
+    pointer-events: none;
+    animation: sparkle linear infinite;
+  }
+
+  .s1 { top: 16%;    left: 13%;   animation-delay: 0s;    animation-duration: 3.2s; }
+  .s2 { top: 14%;    right: 12%;  animation-delay: 0.9s;  animation-duration: 3.8s; }
+  .s3 { bottom: 16%; left: 15%;   animation-delay: 1.8s;  animation-duration: 3.5s; }
+  .s4 { bottom: 14%; right: 13%;  animation-delay: 2.6s;  animation-duration: 4.1s; }
+
+  @keyframes sparkle {
+    0%, 100% { transform: translateY(0)    scale(1);   opacity: 0.7; }
+    50%       { transform: translateY(-9px) scale(1.4); opacity: 1;   }
+  }
+</style>

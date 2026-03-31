@@ -10,10 +10,11 @@
 //   5. CTA Strip     (book an assessment)
 // =============================================================
 
-import Layout        from '../layouts/Layout.astro';
-import Hero          from '../components/Hero.astro';
-import ServicesSection from '../components/ServicesSection.astro';
-import Reviews       from '../components/Reviews.astro';
+import Layout              from '../layouts/Layout.astro';
+import Hero                from '../components/Hero.astro';
+import ServicesSection      from '../components/ServicesSection.astro';
+import Reviews             from '../components/Reviews.astro';
+import IndianIllustration  from '../components/IndianIllustration.astro';
 ---
 
 <Layout>
@@ -46,12 +47,9 @@ import Reviews       from '../components/Reviews.astro';
         <a href="/services#school-readiness" class="btn btn-primary">Learn More</a>
       </div>
 
-      <!-- Placeholder image (replace with real photo when available) -->
+      <!-- Indian-themed illustrated visual -->
       <div class="highlight-image">
-        <div class="image-placeholder">
-          <span class="placeholder-icon">📚</span>
-          <span class="placeholder-text">Image Coming Soon</span>
-        </div>
+        <IndianIllustration icon="📚" palette="green" minHeight="380px" />
       </div>
 
     </div>
@@ -144,37 +142,6 @@ import Reviews       from '../components/Reviews.astro';
     font-size: 0.7rem;
     font-weight: 700;
     flex-shrink: 0;   /* prevent shrinking when text is long */
-  }
-
-  /* ---- Image ---- */
-  .highlight-image img {
-    width: 100%;
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-md);
-  }
-
-  .image-placeholder {
-    width: 100%;
-    min-height: 380px;
-    border-radius: var(--radius-md);
-    background: linear-gradient(135deg, var(--color-primary) 0%, #1a5c66 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    box-shadow: var(--shadow-md);
-  }
-
-  .placeholder-icon {
-    font-size: 3rem;
-    opacity: 0.7;
-  }
-
-  .placeholder-text {
-    color: rgba(255,255,255,0.7);
-    font-size: 0.95rem;
-    font-weight: 500;
   }
 
   /* ---- Mobile: stack vertically, image above text ---- */

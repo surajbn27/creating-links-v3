@@ -47,7 +47,7 @@
   --font-heading: 'Inter', system-ui, -apple-system, sans-serif;
 
   /* --- Layout --- */
-  --navbar-height: 58px;   /* used by services page sticky nav: top: var(--navbar-height) */
+  --navbar-height: 84px;   /* used by services page sticky nav: top: var(--navbar-height) */
 
   /* --- Borders & shadows --- */
   --radius-sm: 6px;

@@ -13,8 +13,12 @@
 // so the sticky nav pill links scroll directly to it.
 // =============================================================
 
-import Layout       from '../layouts/Layout.astro';
-import servicesData from '../data/services.json';
+import Layout              from '../layouts/Layout.astro';
+import servicesData        from '../data/services.json';
+import IndianIllustration  from '../components/IndianIllustration.astro';
+
+// Cycle through colour palettes for alternating service rows
+const palettes = ['teal', 'saffron', 'lotus', 'green', 'purple'] as const;
 ---
 
 <Layout
@@ -74,12 +78,13 @@ import servicesData from '../data/services.json';
             </ul>
           </div>
 
-          <!-- Image column placeholder -->
+          <!-- Image column: Indian-themed illustrated visual -->
           <div class="img-col">
-            <div class="image-placeholder">
-              <span class="placeholder-icon">{service.icon}</span>
-              <span class="placeholder-text">Image Coming Soon</span>
-            </div>
+            <IndianIllustration
+              icon={service.icon}
+              palette={palettes[index % palettes.length]}
+              minHeight="340px"
+            />
           </div>
         </div>
       ))}
@@ -180,28 +185,10 @@ import servicesData from '../data/services.json';
     box-shadow: var(--shadow-md);
   }
 
-  .image-placeholder {
-    width: 100%;
-    min-height: 320px;
-    border-radius: var(--radius-md);
-    background: linear-gradient(135deg, var(--color-primary) 0%, #1a5c66 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    box-shadow: var(--shadow-md);
-  }
-
-  .placeholder-icon {
-    font-size: 3rem;
-    opacity: 0.7;
-  }
-
-  .placeholder-text {
-    color: rgba(255,255,255,0.7);
-    font-size: 0.95rem;
-    font-weight: 500;
+  /* placeholder styles removed — replaced by IndianIllustration component */
+  ._unused {
+    /* keeping selector to avoid any accidental CSS removal side-effects */
+    display: none;
   }
 
   /* ---- Service title row (icon + heading + optional subtitle) ---- */
