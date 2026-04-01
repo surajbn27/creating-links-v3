@@ -256,18 +256,30 @@ import IndianIllustration from '../components/IndianIllustration.astro';
   @media (max-width: 768px) {
     .grid {
       grid-template-columns: 1fr;
+      gap: 1.5rem;
     }
 
-    /* Restore natural column order on mobile */
+    /* Always show text first on mobile; illustration is secondary */
     .reverse .content       { order: 0; }
-    .reverse .image-wrapper { order: -1; }
+    .reverse .image-wrapper { order: 1; }
 
     .philosophy-grid {
       grid-template-columns: 1fr;
     }
 
+    /* Illustration shows below the text, compact and decorative */
     .image-wrapper {
-      margin-bottom: 1rem;
+      margin-bottom: 0;
+    }
+
+    /* Text sections left-aligned for comfortable mobile reading */
+    .content {
+      text-align: left;
+    }
+
+    /* Check-list items stay left-aligned */
+    .check-list li {
+      align-items: flex-start;
     }
   }
 </style>

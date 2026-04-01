@@ -259,24 +259,34 @@ const palettes = ['teal', 'saffron', 'lotus', 'green', 'purple'] as const;
     flex-shrink: 0;   /* prevent bullet from shrinking on long text */
   }
 
-  /* ---- Mobile: single column ---- */
+  /* ---- Mobile: single column, illustration hidden ---- */
   @media (max-width: 768px) {
 
     /* Both normal and reversed rows stack the same way on mobile */
     .service-row,
     .reverse {
       flex-direction: column;
-      gap: 1.5rem;
-      text-align: center;
+      gap: 0;
       padding: 2rem 0;
     }
 
+    /* Hide illustrations — on mobile the text fills the full width cleanly */
+    .img-col {
+      display: none;
+    }
+
+    /* Left-align text for easier reading on mobile */
+    .service-row,
+    .reverse {
+      text-align: left;
+    }
+
     .icon-header {
-      justify-content: center;
+      justify-content: flex-start;
     }
 
     .benefits-list li {
-      justify-content: center;
+      justify-content: flex-start;
     }
 
     /* Adjust sticky nav offset on mobile (navbar is slightly shorter) */

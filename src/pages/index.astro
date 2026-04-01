@@ -150,8 +150,9 @@ import IndianIllustration  from '../components/IndianIllustration.astro';
       grid-template-columns: 1fr;
     }
 
+    /* Illustration appears below the text on mobile (text is the priority) */
     .highlight-image {
-      order: -1;   /* image moves above text on small screens */
+      order: 1;
     }
   }
 </style>

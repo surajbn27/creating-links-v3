@@ -194,4 +194,28 @@ const bg = gradients[palette] ?? gradients.teal;
     0%, 100% { transform: translateY(0)    scale(1);   opacity: 0.7; }
     50%       { transform: translateY(-9px) scale(1.4); opacity: 1;   }
   }
+
+  /* ---- Mobile: keep illustrations compact and decorative ---- */
+  @media (max-width: 768px) {
+    /* Override the inline min-height so the card never dominates a phone screen */
+    .indian-illus {
+      min-height: 200px !important;
+      max-height: 220px;
+    }
+
+    /* Shrink the mandala proportionally */
+    .mandala {
+      width: min(60%, 200px);
+    }
+
+    /* Smaller icon on mobile */
+    .icon-float {
+      font-size: 3.5rem;
+    }
+
+    /* Scale down the rings so they fit inside the shorter card */
+    .r1 { width: 60px;  height: 60px;  }
+    .r2 { width: 110px; height: 110px; }
+    .r3 { width: 170px; height: 170px; }
+  }
 </style>
