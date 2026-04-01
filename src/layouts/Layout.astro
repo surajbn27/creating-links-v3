@@ -16,8 +16,8 @@
 // =============================================================
 
 import '../styles/global.css';
-import Navbar      from '../components/Navbar.astro';
-import Footer      from '../components/Footer.astro';
+import Navbar        from '../components/Navbar.astro';
+import Footer        from '../components/Footer.astro';
 import WhatsAppFloat from '../components/WhatsAppFloat.astro';
 
 // Props with sensible defaults (used as site-wide fallback)
@@ -27,9 +27,12 @@ interface Props {
 }
 
 const {
-  title       = "Creating Links — Child Therapy & Development Centre",
-  description = "Specialized speech therapy, occupational therapy, and special education for children in Bengaluru. Empowering families, enabling growth."
+  title       = "Creating Links — Holistic Wellness & Child Therapy Centre, Bengaluru",
+  description = "Specialized speech therapy, occupational therapy, school readiness, and holistic child development in Bengaluru. Empowering families, enabling growth."
 } = Astro.props;
+
+// Build the canonical URL for this page
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
@@ -38,6 +41,26 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+
+    <!-- Canonical URL — tells Google which URL is the "official" one -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph — used by WhatsApp, Facebook, LinkedIn when sharing -->
+    <meta property="og:type"        content="website" />
+    <meta property="og:site_name"   content="Creating Links" />
+    <meta property="og:url"         content={canonicalURL} />
+    <meta property="og:title"       content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image"       content="https://creatinglinks.org/images/logo_dark.png" />
+    <meta property="og:locale"      content="en_IN" />
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card"        content="summary" />
+    <meta name="twitter:title"       content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image"       content="https://creatinglinks.org/images/logo_dark.png" />
+
+    <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
     <link rel="apple-touch-icon" sizes="192x192" href="/apple-touch-icon.png" />
