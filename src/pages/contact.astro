@@ -40,7 +40,7 @@ import Layout from '../layouts/Layout.astro';
         </p>
 
         <!--
-          Web3Forms: form submissions are sent to creatinglinks22@gmail.com
+          Web3Forms: form submissions are sent to hello@creatinglinks.org (via Web3Forms account)
           Access key: 35fbd206-d7e8-49fe-8814-07e5ecdb2337
           Docs: https://web3forms.com
         -->
@@ -51,6 +51,12 @@ import Layout from '../layouts/Layout.astro';
         >
           <!-- Web3Forms authentication key (required) -->
           <input type="hidden" name="access_key" value="35fbd206-d7e8-49fe-8814-07e5ecdb2337" />
+
+          <!-- Sender label shown in the notification email subject line -->
+          <input type="hidden" name="from_name" value="Creating Links Website" />
+
+          <!-- Replies to Web3Forms notifications go to the clinic email -->
+          <input type="hidden" name="replyto" value="hello@creatinglinks.org" />
 
           <!-- Spam honeypot: bots fill this in, humans don't see it -->
           <input type="checkbox" name="botcheck" style="display: none;" />
@@ -153,7 +159,7 @@ import Layout from '../layouts/Layout.astro';
             <span class="info-icon">✉️</span>
             <div>
               <strong>Email</strong>
-              <p><a href="mailto:creatinglinks22@gmail.com">creatinglinks22@gmail.com</a></p>
+              <p><a href="mailto:hello@creatinglinks.org">hello@creatinglinks.org</a></p>
             </div>
           </div>
 
