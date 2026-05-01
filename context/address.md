@@ -1,6 +1,8 @@
-Physical address is Creating Links, 4C, 912, 4th Cross, HRBR Layout 1st Block, HRBR Layout, Kalyan Nagar, Bengaluru, Karnataka 560043, India
+We are now at: 
+Creating Links, #18 Upasana, 3rd Cross, 9th Main, 1st Block, HRBR Layout, Banaswadi, Bengaluru, Karnataka 560043, India
+Landmark - Near Ibaco Ice Cream (diagonally opposite to Ibaco and approximately 100m away)
 
 The link to embed the location
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7774.597676664828!2d77.65055600000001!3d13.016632!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae17fae7ddd857%3A0xfade801edcfd17f3!2sCreating%20Links!5e0!3m2!1sen!2sus!4v1774095665755!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d242.95870377216883!2d77.64668722064789!3d13.014054515431738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae17fae7ddd857%3A0xfade801edcfd17f3!2sCreating%20Links!5e0!3m2!1sen!2sin!4v1777655501933!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 Phone number is 8105272466
